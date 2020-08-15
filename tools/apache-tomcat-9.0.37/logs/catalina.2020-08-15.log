@@ -1,0 +1,260 @@
+15-Aug-2020 16:40:10.467 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer [localhost:8005] (base 포트 [8005] 그리고 offset [0])와(과) 연결할 수 없었습니다. Tomcat이 실행 중이지 않을 수 있습니다.
+15-Aug-2020 16:40:21.587 WARNING [main] org.apache.catalina.core.StandardContext.setPath 컨텍스트 경로는 반드시 빈 문자열이거나, 또는 '/'로 시작하고 '/'로 끝나지 않는 문자열이어야 합니다. 해당 경로 [it]은(는) 이 조건을 충족시키지 않아 [/it](으)로 변경되었습니다.
+15-Aug-2020 16:40:21.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/9.0.37
+15-Aug-2020 16:40:21.636 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Jun 30 2020 20:09:49 UTC
+15-Aug-2020 16:40:21.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         9.0.37.0
+15-Aug-2020 16:40:21.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 10
+15-Aug-2020 16:40:21.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            10.0
+15-Aug-2020 16:40:21.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+15-Aug-2020 16:40:21.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jdk-12.0.2
+15-Aug-2020 16:40:21.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           12.0.2+10
+15-Aug-2020 16:40:21.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+15-Aug-2020 16:40:21.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:40:21.640 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:40:21.642 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Aug-2020 16:40:21.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Aug-2020 16:40:21.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Aug-2020 16:40:21.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\conf\logging.properties
+15-Aug-2020 16:40:21.657 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Aug-2020 16:40:21.659 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+15-Aug-2020 16:40:21.663 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Aug-2020 16:40:21.664 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+15-Aug-2020 16:40:21.666 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:40:21.668 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:40:21.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\temp
+15-Aug-2020 16:40:21.674 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.24]을(를) 로드했습니다.
+15-Aug-2020 16:40:21.676 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-Aug-2020 16:40:21.678 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+15-Aug-2020 16:40:21.691 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1g  21 Apr 2020]
+15-Aug-2020 16:40:22.402 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+15-Aug-2020 16:40:23.412 INFO [main] org.apache.catalina.startup.Catalina.load [2334] 밀리초 내에 서버가 초기화되었습니다.
+15-Aug-2020 16:40:23.588 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+15-Aug-2020 16:40:23.597 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.37]
+15-Aug-2020 16:40:24.851 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [668] 밀리초가 소요됐습니다.
+15-Aug-2020 16:40:24.899 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]을(를) 배치합니다.
+15-Aug-2020 16:40:24.972 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]에 대한 배치가 [73] 밀리초에 완료되었습니다.
+15-Aug-2020 16:40:24.976 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]을(를) 배치합니다.
+15-Aug-2020 16:40:26.398 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]에 대한 배치가 [1,423] 밀리초에 완료되었습니다.
+15-Aug-2020 16:40:26.407 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]을(를) 배치합니다.
+15-Aug-2020 16:40:26.505 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]에 대한 배치가 [98] 밀리초에 완료되었습니다.
+15-Aug-2020 16:40:26.508 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]을(를) 배치합니다.
+15-Aug-2020 16:40:26.576 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]에 대한 배치가 [68] 밀리초에 완료되었습니다.
+15-Aug-2020 16:40:26.578 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]을(를) 배치합니다.
+15-Aug-2020 16:40:26.672 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]에 대한 배치가 [94] 밀리초에 완료되었습니다.
+15-Aug-2020 16:40:26.676 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]을(를) 배치합니다.
+15-Aug-2020 16:40:26.762 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]에 대한 배치가 [86] 밀리초에 완료되었습니다.
+15-Aug-2020 16:40:26.769 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+15-Aug-2020 16:40:26.791 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3366] 밀리초 내에 시작되었습니다.
+15-Aug-2020 16:42:34.990 WARNING [main] org.apache.catalina.core.StandardContext.setPath 컨텍스트 경로는 반드시 빈 문자열이거나, 또는 '/'로 시작하고 '/'로 끝나지 않는 문자열이어야 합니다. 해당 경로 [it]은(는) 이 조건을 충족시키지 않아 [/it](으)로 변경되었습니다.
+15-Aug-2020 16:42:35.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/9.0.37
+15-Aug-2020 16:42:35.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Jun 30 2020 20:09:49 UTC
+15-Aug-2020 16:42:35.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         9.0.37.0
+15-Aug-2020 16:42:35.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 10
+15-Aug-2020 16:42:35.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            10.0
+15-Aug-2020 16:42:35.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+15-Aug-2020 16:42:35.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jdk-12.0.2
+15-Aug-2020 16:42:35.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           12.0.2+10
+15-Aug-2020 16:42:35.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+15-Aug-2020 16:42:35.024 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:42:35.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:42:35.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Aug-2020 16:42:35.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Aug-2020 16:42:35.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Aug-2020 16:42:35.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\conf\logging.properties
+15-Aug-2020 16:42:35.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Aug-2020 16:42:35.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+15-Aug-2020 16:42:35.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Aug-2020 16:42:35.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+15-Aug-2020 16:42:35.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:42:35.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:42:35.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\temp
+15-Aug-2020 16:42:35.052 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.24]을(를) 로드했습니다.
+15-Aug-2020 16:42:35.056 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-Aug-2020 16:42:35.058 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+15-Aug-2020 16:42:35.066 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1g  21 Apr 2020]
+15-Aug-2020 16:42:35.514 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+15-Aug-2020 16:42:36.311 INFO [main] org.apache.catalina.startup.Catalina.load [1715] 밀리초 내에 서버가 초기화되었습니다.
+15-Aug-2020 16:42:36.410 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+15-Aug-2020 16:42:36.415 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.37]
+15-Aug-2020 16:42:37.583 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [651] 밀리초가 소요됐습니다.
+15-Aug-2020 16:42:37.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]을(를) 배치합니다.
+15-Aug-2020 16:42:37.789 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]에 대한 배치가 [157] 밀리초에 완료되었습니다.
+15-Aug-2020 16:42:37.801 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]을(를) 배치합니다.
+15-Aug-2020 16:42:39.589 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]에 대한 배치가 [1,787] 밀리초에 완료되었습니다.
+15-Aug-2020 16:42:39.596 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]을(를) 배치합니다.
+15-Aug-2020 16:42:39.715 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]에 대한 배치가 [118] 밀리초에 완료되었습니다.
+15-Aug-2020 16:42:39.723 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]을(를) 배치합니다.
+15-Aug-2020 16:42:39.805 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]에 대한 배치가 [81] 밀리초에 완료되었습니다.
+15-Aug-2020 16:42:39.810 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]을(를) 배치합니다.
+15-Aug-2020 16:42:39.909 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]에 대한 배치가 [98] 밀리초에 완료되었습니다.
+15-Aug-2020 16:42:39.918 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]을(를) 배치합니다.
+15-Aug-2020 16:42:40.018 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]에 대한 배치가 [101] 밀리초에 완료되었습니다.
+15-Aug-2020 16:42:40.033 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+15-Aug-2020 16:42:40.066 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3749] 밀리초 내에 시작되었습니다.
+15-Aug-2020 16:47:01.942 WARNING [main] org.apache.catalina.core.StandardContext.setPath 컨텍스트 경로는 반드시 빈 문자열이거나, 또는 '/'로 시작하고 '/'로 끝나지 않는 문자열이어야 합니다. 해당 경로 [it]은(는) 이 조건을 충족시키지 않아 [/it](으)로 변경되었습니다.
+15-Aug-2020 16:47:01.984 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/9.0.37
+15-Aug-2020 16:47:01.985 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Jun 30 2020 20:09:49 UTC
+15-Aug-2020 16:47:01.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         9.0.37.0
+15-Aug-2020 16:47:01.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 10
+15-Aug-2020 16:47:01.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            10.0
+15-Aug-2020 16:47:01.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+15-Aug-2020 16:47:01.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jdk-12.0.2
+15-Aug-2020 16:47:01.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           12.0.2+10
+15-Aug-2020 16:47:01.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+15-Aug-2020 16:47:01.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:47:01.991 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:47:01.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Aug-2020 16:47:01.998 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Aug-2020 16:47:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Aug-2020 16:47:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\conf\logging.properties
+15-Aug-2020 16:47:02.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Aug-2020 16:47:02.011 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+15-Aug-2020 16:47:02.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Aug-2020 16:47:02.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+15-Aug-2020 16:47:02.016 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:47:02.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:47:02.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\temp
+15-Aug-2020 16:47:02.025 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.24]을(를) 로드했습니다.
+15-Aug-2020 16:47:02.028 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-Aug-2020 16:47:02.033 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+15-Aug-2020 16:47:02.042 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1g  21 Apr 2020]
+15-Aug-2020 16:47:02.519 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+15-Aug-2020 16:47:03.325 INFO [main] org.apache.catalina.startup.Catalina.load [1907] 밀리초 내에 서버가 초기화되었습니다.
+15-Aug-2020 16:47:03.436 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+15-Aug-2020 16:47:03.441 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.37]
+15-Aug-2020 16:47:04.745 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [630] 밀리초가 소요됐습니다.
+15-Aug-2020 16:47:04.800 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]을(를) 배치합니다.
+15-Aug-2020 16:47:04.881 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]에 대한 배치가 [81] 밀리초에 완료되었습니다.
+15-Aug-2020 16:47:04.888 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]을(를) 배치합니다.
+15-Aug-2020 16:47:05.986 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]에 대한 배치가 [1,098] 밀리초에 완료되었습니다.
+15-Aug-2020 16:47:05.992 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]을(를) 배치합니다.
+15-Aug-2020 16:47:06.087 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]에 대한 배치가 [95] 밀리초에 완료되었습니다.
+15-Aug-2020 16:47:06.093 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]을(를) 배치합니다.
+15-Aug-2020 16:47:06.155 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]에 대한 배치가 [62] 밀리초에 완료되었습니다.
+15-Aug-2020 16:47:06.161 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]을(를) 배치합니다.
+15-Aug-2020 16:47:06.245 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]에 대한 배치가 [85] 밀리초에 완료되었습니다.
+15-Aug-2020 16:47:06.249 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]을(를) 배치합니다.
+15-Aug-2020 16:47:06.341 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]에 대한 배치가 [91] 밀리초에 완료되었습니다.
+15-Aug-2020 16:47:06.353 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+15-Aug-2020 16:47:06.375 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3048] 밀리초 내에 시작되었습니다.
+15-Aug-2020 16:50:02.913 WARNING [main] org.apache.catalina.core.StandardContext.setPath 컨텍스트 경로는 반드시 빈 문자열이거나, 또는 '/'로 시작하고 '/'로 끝나지 않는 문자열이어야 합니다. 해당 경로 [it]은(는) 이 조건을 충족시키지 않아 [/it](으)로 변경되었습니다.
+15-Aug-2020 16:50:02.954 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/9.0.37
+15-Aug-2020 16:50:02.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Jun 30 2020 20:09:49 UTC
+15-Aug-2020 16:50:02.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         9.0.37.0
+15-Aug-2020 16:50:02.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 10
+15-Aug-2020 16:50:02.961 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            10.0
+15-Aug-2020 16:50:02.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+15-Aug-2020 16:50:02.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jdk-12.0.2
+15-Aug-2020 16:50:02.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           12.0.2+10
+15-Aug-2020 16:50:02.972 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+15-Aug-2020 16:50:02.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:50:02.978 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:50:02.980 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Aug-2020 16:50:02.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Aug-2020 16:50:02.985 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Aug-2020 16:50:02.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\conf\logging.properties
+15-Aug-2020 16:50:02.991 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Aug-2020 16:50:02.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+15-Aug-2020 16:50:02.996 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Aug-2020 16:50:02.997 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+15-Aug-2020 16:50:03.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:50:03.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:50:03.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\temp
+15-Aug-2020 16:50:03.010 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.24]을(를) 로드했습니다.
+15-Aug-2020 16:50:03.014 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-Aug-2020 16:50:03.016 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+15-Aug-2020 16:50:03.028 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1g  21 Apr 2020]
+15-Aug-2020 16:50:03.579 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+15-Aug-2020 16:50:04.419 INFO [main] org.apache.catalina.startup.Catalina.load [2104] 밀리초 내에 서버가 초기화되었습니다.
+15-Aug-2020 16:51:26.122 WARNING [main] org.apache.catalina.core.StandardContext.setPath 컨텍스트 경로는 반드시 빈 문자열이거나, 또는 '/'로 시작하고 '/'로 끝나지 않는 문자열이어야 합니다. 해당 경로 [it]은(는) 이 조건을 충족시키지 않아 [/it](으)로 변경되었습니다.
+15-Aug-2020 16:51:26.161 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/9.0.37
+15-Aug-2020 16:51:26.162 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Jun 30 2020 20:09:49 UTC
+15-Aug-2020 16:51:26.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         9.0.37.0
+15-Aug-2020 16:51:26.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 10
+15-Aug-2020 16:51:26.164 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            10.0
+15-Aug-2020 16:51:26.165 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+15-Aug-2020 16:51:26.165 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jdk-12.0.2
+15-Aug-2020 16:51:26.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           12.0.2+10
+15-Aug-2020 16:51:26.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+15-Aug-2020 16:51:26.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:51:26.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:51:26.169 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Aug-2020 16:51:26.171 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Aug-2020 16:51:26.176 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Aug-2020 16:51:26.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\conf\logging.properties
+15-Aug-2020 16:51:26.180 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Aug-2020 16:51:26.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+15-Aug-2020 16:51:26.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Aug-2020 16:51:26.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+15-Aug-2020 16:51:26.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:51:26.191 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:51:26.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\temp
+15-Aug-2020 16:51:26.195 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.24]을(를) 로드했습니다.
+15-Aug-2020 16:51:26.197 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-Aug-2020 16:51:26.199 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+15-Aug-2020 16:51:26.207 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1g  21 Apr 2020]
+15-Aug-2020 16:51:26.714 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+15-Aug-2020 16:51:27.435 INFO [main] org.apache.catalina.startup.Catalina.load [1791] 밀리초 내에 서버가 초기화되었습니다.
+15-Aug-2020 16:51:27.630 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+15-Aug-2020 16:51:27.646 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.37]
+15-Aug-2020 16:51:28.933 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [738] 밀리초가 소요됐습니다.
+15-Aug-2020 16:51:28.989 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]을(를) 배치합니다.
+15-Aug-2020 16:51:29.078 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]에 대한 배치가 [89] 밀리초에 완료되었습니다.
+15-Aug-2020 16:51:29.084 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]을(를) 배치합니다.
+15-Aug-2020 16:51:30.301 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]에 대한 배치가 [1,216] 밀리초에 완료되었습니다.
+15-Aug-2020 16:51:30.309 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]을(를) 배치합니다.
+15-Aug-2020 16:51:30.413 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]에 대한 배치가 [103] 밀리초에 완료되었습니다.
+15-Aug-2020 16:51:30.419 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]을(를) 배치합니다.
+15-Aug-2020 16:51:30.489 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]에 대한 배치가 [70] 밀리초에 완료되었습니다.
+15-Aug-2020 16:51:30.494 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]을(를) 배치합니다.
+15-Aug-2020 16:51:30.593 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]에 대한 배치가 [99] 밀리초에 완료되었습니다.
+15-Aug-2020 16:51:30.600 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]을(를) 배치합니다.
+15-Aug-2020 16:51:30.699 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]에 대한 배치가 [99] 밀리초에 완료되었습니다.
+15-Aug-2020 16:51:30.710 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+15-Aug-2020 16:51:30.734 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3294] 밀리초 내에 시작되었습니다.
+15-Aug-2020 16:57:55.518 WARNING [main] org.apache.catalina.core.StandardContext.setPath 컨텍스트 경로는 반드시 빈 문자열이거나, 또는 '/'로 시작하고 '/'로 끝나지 않는 문자열이어야 합니다. 해당 경로 [it]은(는) 이 조건을 충족시키지 않아 [/it](으)로 변경되었습니다.
+15-Aug-2020 16:57:55.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/9.0.37
+15-Aug-2020 16:57:55.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Jun 30 2020 20:09:49 UTC
+15-Aug-2020 16:57:55.591 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         9.0.37.0
+15-Aug-2020 16:57:55.592 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 10
+15-Aug-2020 16:57:55.592 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            10.0
+15-Aug-2020 16:57:55.593 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+15-Aug-2020 16:57:55.594 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jdk-12.0.2
+15-Aug-2020 16:57:55.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           12.0.2+10
+15-Aug-2020 16:57:55.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+15-Aug-2020 16:57:55.598 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:57:55.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:57:55.601 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Aug-2020 16:57:55.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Aug-2020 16:57:55.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Aug-2020 16:57:55.607 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\conf\logging.properties
+15-Aug-2020 16:57:55.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Aug-2020 16:57:55.619 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+15-Aug-2020 16:57:55.622 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Aug-2020 16:57:55.626 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+15-Aug-2020 16:57:55.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:57:55.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37
+15-Aug-2020 16:57:55.635 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\temp
+15-Aug-2020 16:57:55.637 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.24]을(를) 로드했습니다.
+15-Aug-2020 16:57:55.639 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15-Aug-2020 16:57:55.645 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+15-Aug-2020 16:57:55.655 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1g  21 Apr 2020]
+15-Aug-2020 16:57:56.166 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+15-Aug-2020 16:57:57.225 INFO [main] org.apache.catalina.startup.Catalina.load [2215] 밀리초 내에 서버가 초기화되었습니다.
+15-Aug-2020 16:57:57.419 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+15-Aug-2020 16:57:57.454 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.37]
+15-Aug-2020 16:57:58.757 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [662] 밀리초가 소요됐습니다.
+15-Aug-2020 16:57:58.821 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]을(를) 배치합니다.
+15-Aug-2020 16:57:58.900 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\docs]에 대한 배치가 [79] 밀리초에 완료되었습니다.
+15-Aug-2020 16:57:58.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]을(를) 배치합니다.
+15-Aug-2020 16:58:00.097 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\examples]에 대한 배치가 [1,189] 밀리초에 완료되었습니다.
+15-Aug-2020 16:58:00.103 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]을(를) 배치합니다.
+15-Aug-2020 16:58:00.229 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\host-manager]에 대한 배치가 [125] 밀리초에 완료되었습니다.
+15-Aug-2020 16:58:00.238 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]을(를) 배치합니다.
+15-Aug-2020 16:58:00.328 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ITWeb]에 대한 배치가 [90] 밀리초에 완료되었습니다.
+15-Aug-2020 16:58:00.335 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]을(를) 배치합니다.
+15-Aug-2020 16:58:00.463 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\manager]에 대한 배치가 [128] 밀리초에 완료되었습니다.
+15-Aug-2020 16:58:00.474 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]을(를) 배치합니다.
+15-Aug-2020 16:58:00.598 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\qkdlf\github\Servlet-JSP-Programming\tools\apache-tomcat-9.0.37\webapps\ROOT]에 대한 배치가 [125] 밀리초에 완료되었습니다.
+15-Aug-2020 16:58:00.623 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+15-Aug-2020 16:58:00.654 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3363] 밀리초 내에 시작되었습니다.
