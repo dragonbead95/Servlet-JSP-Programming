@@ -9,26 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/hi")
-public class Nana extends HttpServlet{
+@WebServlet("/add")
+public class Calculator_add extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-
-		String cnt_ = request.getParameter("cnt");
 		
-		int cnt = 100;
-		if (cnt_ != null && !cnt_.equals("")) {
-			cnt = Integer.parseInt(cnt_);
-		}
-
-			
-		for(int i=0; i<cnt;i++)
-		{
-			out.println((i+1)+" : 안녕 Hello Servlet!! <br>");
-		}
+		String x_ = request.getParameter("x");
+		String y_ = request.getParameter("y");
+		
+		int x = 0;
+		int y = 0;
+		
+		if(!x_.equals(""))
+			x = Integer.parseInt(x_);
+		if(!y_.equals(""))
+			y = Integer.parseInt(y_);
+		
+		int sum = x+y;
+		
+		out.println("계산 결과 : "+sum);
+		
 	}
+
 }
