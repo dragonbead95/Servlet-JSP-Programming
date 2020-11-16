@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.align_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: 70%;
+  margin-top: 50px;
+}
+
+.board_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.board_title {
+  background-color: #e9ecef;
+}
+.board_title th {
+  padding: 12px;
+}

@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+.align_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  padding: 16px;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.register_btn_container {
+  text-align: center;
+}
+
+.signin {
+  text-align: center;
+  padding: 5px;
+}

@@ -1,0 +1,44 @@
+create table notice
+(
+	id number,
+	title nvarchar2(100),
+	writer_id nvarchar2(50),
+	content clob,
+	regdate timestamp,
+	hit number,
+	files nvarchar2(1000)
+);
+
+create table comments(
+	id number,
+	content nvarchar2(2000),
+	regdate timestamp,
+	writer_id nvarchar2(50),
+	notice_id number
+);
+
+create table role
+(
+	id nvarchar2(50),
+	discription nvarchar2(500)
+);
+
+create table member_role
+(
+	member_id nvarchar2(50),
+	role_id nvarchar2(50)
+);
+
+create table member
+(
+	id nvarchar2(50),
+	pwd nvarchar2(50),
+	name nvarchar2(50),
+	gender nchar(2),
+	birthday char(10),
+	phone char(13),
+	regdate date,
+	email varchar2(200)
+);
+
+insert into notice values(1,'JDBC란 무엇인가?','newlec','aaa',sysdate,0,'');
