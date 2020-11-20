@@ -42,3 +42,4 @@ create table member
 );
 
 insert into notice values(1,'JDBC란 무엇인가?','newlec','aaa',sysdate,0,'');
+insert into notice values(2,'JDBC 드라이버 다운로드 방법','newlec','aaa',sysdate,0,'');
