@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import web.entity.Notice;
+
 @WebServlet("/notice/detail")
 public class NoticeDetailController extends HttpServlet{
 	@Override
@@ -37,12 +39,17 @@ public class NoticeDetailController extends HttpServlet{
 			String files = rs.getString("files");
 			String content = rs.getString("content");
 			
-			request.setAttribute("title", title);
-			request.setAttribute("writer_id", writer_id);
-			request.setAttribute("regdate", regdate);
-			request.setAttribute("hit", hit);
-			request.setAttribute("files", files);
-			request.setAttribute("content", content);
+			Notice notice = new Notice(
+										id,
+										title,
+										writer_id,
+										regdate,
+										hit,
+										files,
+										content
+										);
+			
+			request.setAttribute("n", notice);
 			
 			rs.close();
 			st.close();
@@ -57,7 +64,7 @@ public class NoticeDetailController extends HttpServlet{
 		// 1. redirect => request,response 유지하지 않고 그냥 Servelt을 이동시킴
 		// 2. forward => request,response를 다른 Servelt으로 유지하면서 이동시킴
 		request
-		.getRequestDispatcher("/notice/detail.jsp")
+		.getRequestDispatcher("/WEB-INF/view/notice/detail.jsp")
 		.forward(request, response);
 		
 		

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +11,8 @@
     <link rel="stylesheet" href="/css/static.css">
 </head>
 <body>
-  <form action=""></form>
-  <div class="align_container">
+  <form action="">
+    <div class="align_container">
     <div class="container">
       <h1>회원가입</h1>
       <label for="email">이메일</label>
@@ -33,6 +36,8 @@
     </div>
   </div>
   </form>
+
+
 
 </body>
 </html>

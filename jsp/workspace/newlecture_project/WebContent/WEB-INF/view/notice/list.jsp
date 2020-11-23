@@ -1,3 +1,7 @@
+
+<%@page import="web.entity.Notice"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Date"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -5,17 +9,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%
-	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String sql = "select * from notice";
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-	Connection con = DriverManager.getConnection(url,"newlec","newlec"); // 드라이버 매니저를 통해서 연결 객체 생성
-	Statement st = con.createStatement(); // 실행 도구 생성
-	ResultSet rs = st.executeQuery(sql); // 쿼리 실행후 결과를 얻어서 fetch해올수 있게함
-	
 
-	
-%>
 <!DOCTYPE html>
 <html>
 
@@ -188,19 +182,21 @@
 						</tr>
 					</thead>
 					<tbody>
-					<% while(rs.next()){%>
-					<tr>
-						<td><%= rs.getInt("id") %></td>
-						<td class="title indent text-align-left">
-							<a href="detail?id=<%= rs.getInt("id") %>">
-							<%= rs.getString("title") %></a></td>
-						<td><%= rs.getString("writer_id") %></td>
-						<td>
-							<%= rs.getDate("regdate") %>		
-						</td>
-						<td><%= rs.getInt("hit") %></td>
-					</tr>
-					<%}%>
+					
+					<%
+					List<Notice> list = (List<Notice>) request.getAttribute("list");
+					for(Notice n : list)
+					{
+						pageContext.setAttribute("n", n);
+					%>
+						<tr>
+							<td>${n.id }</td>
+							<td class="title indent text-align-left"><a href="detail?id=${n.id }">${n.title}</a></td>
+							<td>${n.writer_id}</td>
+							<td>${n.regdate}</td>
+							<td>${n.hit}</td>
+						</tr>
+					<%} %>
 					</tbody>
 				</table>
 			</div>
@@ -274,8 +270,3 @@
     
     </html>
     
-<%	
-	rs.close();
-	st.close();
-	con.close();
-%>
