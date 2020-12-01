@@ -15,18 +15,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import web.entity.Member;
+
 @WebServlet("/register")
 public class RegisterController extends HttpServlet{
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		// Servlet에서 다른 Servelt으로 이동하는 2가지 방법
-		// 1. redirect => request,response 유지하지 않고 그냥 Servelt을 이동시킴
-		// 2. forward => request,response를 다른 Servelt으로 유지하면서 이동시킴
-		//response.sendRedirect("/WEB-INF/view/register/register.jsp");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String re_password = request.getParameter("re_password");
+		
+		// 비밀번호 체크
+		if(!password.equals(re_password))
+		{
+			response.sendRedirect("register.html");
+		}
+		
+
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "insert into member values(?,?)";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, email);
+			pst.setString(2, password);
+			pst.executeQuery();
+			
+			pst.close();
+			con.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		request
-		.getRequestDispatcher("/WEB-INF/view/register/register.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 		.forward(request, response);
 		
 	}

@@ -1,32 +1,32 @@
 package web.entity;
 
 public class Member {
-	private String id;
+	private String email;
 	private String pwd;
 	
-	public Member(String id, String pwd) {
-		this.id = id;
+	public Member(String email, String pwd) {
+		this.email = email;
 		this.pwd = pwd;
 	}
-
-	public String getId() {
-		return id;
+	
+	public String getEmail() {
+		return email;
 	}
-
-	public void setId(String id) {
-		this.id = id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
 	public String getPwd() {
 		return pwd;
 	}
-
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-
+	
+	
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", pwd=" + pwd + "]";
+		return "Member [email=" + email + ", pwd=" + pwd + "]";
 	}
+	
+
 }
