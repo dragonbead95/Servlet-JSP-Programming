@@ -8,7 +8,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -183,12 +183,8 @@
 					</thead>
 					<tbody>
 					
-					<%
-					List<Notice> list = (List<Notice>) request.getAttribute("list");
-					for(Notice n : list)
-					{
-						pageContext.setAttribute("n", n);
-					%>
+
+					<c:forEach var="n" items="${list}">
 						<tr>
 							<td>${n.id }</td>
 							<td class="title indent text-align-left"><a href="detail?id=${n.id }">${n.title}</a></td>
@@ -196,7 +192,7 @@
 							<td>${n.regdate}</td>
 							<td>${n.hit}</td>
 						</tr>
-					<%} %>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -214,9 +210,13 @@
 		<span class="btn btn-prev" onclick="alert('이전 페이지가 없습니다.');">이전</span>
 		
 	</div>
+	<c:set var="page" value="${(param.p==null) ? 1 : param.p}"/> <!-- param.p가 null이면 page는 1부터 시작 -->
+	<c:set var="startNum" value="${page-(page-1)%5}"/>
+	
 	<ul class="-list- center">
-		<li><a class="-text- orange bold" href="?p=1&t=&q=" >1</a></li>
-				
+		<c:forEach var="i" begin="0" end="4">
+		<li><a class="-text- orange bold" href="?p=${startNum+i}&t=&q=" >${startNum+i}</a></li>
+		</c:forEach>
 	</ul>
 	<div>
 		
@@ -227,7 +227,7 @@
 	
 			</div>
 		</main>
-		
+		 
 			
 		</div>
 	</div>

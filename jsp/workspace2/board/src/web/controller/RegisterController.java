@@ -33,14 +33,16 @@ public class RegisterController extends HttpServlet{
 			response.sendRedirect("register.html");
 		}
 		
-
+		Connection con = null;
+		PreparedStatement pst = null;
+		
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 			String sql = "insert into member values(?,?)";
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
-			PreparedStatement pst = con.prepareStatement(sql);
+			con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			pst = con.prepareStatement(sql);
 			pst.setString(1, email);
 			pst.setString(2, password);
 			pst.executeQuery();
@@ -49,9 +51,18 @@ public class RegisterController extends HttpServlet{
 			con.close();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
+			try {
+				pst.close();
+				con.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				System.exit(-1);
+			}
 			e.printStackTrace();
+		}finally {
+			
 		}
-		
 		request
 		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 		.forward(request, response);
