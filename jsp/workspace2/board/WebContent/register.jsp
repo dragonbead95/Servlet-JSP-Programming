@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +25,11 @@
 
       <div class="register_btn_container">
         <button type="submit" class="btn">회원가입</button>
-        <a href="index.html" class="btn a_btn">취소</a>
+        <a href="index.jsp" class="btn a_btn">취소</a>
       </div>
       
       <div class="signin">
-        <p>이미 회원이신가요? <a href="login.html">로그인</a></p>
+        <p>이미 회원이신가요? <a href="login.jsp">로그인</a></p>
       </div>
       
     </div>

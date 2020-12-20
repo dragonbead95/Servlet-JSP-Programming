@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +10,14 @@
     <link rel="stylesheet" href="/css/static.css">
 </head>
 <body>
-    <form action="">
+    <form action="login" method="post">
         <div class="align_container">
         <div class="container">
             <h1>로그인</h1>
             <input type="text" placeholder="이메일" name="email" id="email" required>
             <input type="password"" placeholder="비밀번호" name="password" id="password" required>
             <button type="submit" class="btn">로그인</button>
-            <a href="index.html" class="btn">취소</a>
+            <a href="index.jsp" class="btn">취소</a>
         </div>
     </div>
     </form>

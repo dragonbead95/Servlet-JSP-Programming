@@ -22,7 +22,7 @@ public class RegisterController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String re_password = request.getParameter("re_password");
@@ -30,7 +30,7 @@ public class RegisterController extends HttpServlet{
 		// 비밀번호 체크
 		if(!password.equals(re_password))
 		{
-			response.sendRedirect("register.html");
+			response.sendRedirect("register.jsp");
 		}
 		
 		Connection con = null;
@@ -64,7 +64,7 @@ public class RegisterController extends HttpServlet{
 			
 		}
 		request
-		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
+		.getRequestDispatcher("index.jsp")
 		.forward(request, response);
 		
 	}
