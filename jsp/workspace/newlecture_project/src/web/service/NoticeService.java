@@ -13,24 +13,25 @@ import java.util.List;
 import org.apache.tomcat.dbcp.dbcp2.SQLExceptionList;
 
 import web.entity.Notice;
+import web.entity.NoticeView;
 
 public class NoticeService {
-	public List<Notice> getNoticeList()
+	public List<NoticeView> getNoticeList()
 	{
 		return getNoticeList("title", "", 1); // 기본값 page 1
 	}
-	public List<Notice> getNoticeList(int page)
+	public List<NoticeView> getNoticeList(int page)
 	{
 		//3개의 getNoticeList를 각각 구현하면 관리가 힘드므로 매개변수가 가장 많은 3번째 getNoticeList를
 		//하는 방향으로 구현한다.
 		return getNoticeList("title", "", page);
 	}
-	public List<Notice> getNoticeList(String field/*title, writer_id*/, String query/*A*/, int page)
+	public List<NoticeView> getNoticeList(String field/*title, writer_id*/, String query/*A*/, int page)
 	{
-		List<Notice> list = new ArrayList<Notice>();
+		List<NoticeView> list = new ArrayList<NoticeView>();
 		String sql = "select * from (" + 
 				"    select rownum num, N.* " + 
-				"    from (select * from notice where "+field+" like ? order by regdate desc) N " + 
+				"    from (select * from notice_view where "+field+" like ? order by regdate desc) N " + 
 				") " + 
 				"where num between ? and ?";
 		
@@ -58,16 +59,17 @@ public class NoticeService {
 				Date regdate = rs.getDate("regdate");
 				String hit = rs.getString("hit");
 				String files = rs.getString("files");
-				String content = rs.getString("content");
-				
-				Notice notice = new Notice(
+				//String content = rs.getString("content");
+				int cmtCount = rs.getInt("cmt_count");
+				NoticeView notice = new NoticeView(
 											id,
 											title,
 											writer_id,
 											regdate,
 											hit,
 											files,
-											content
+											//content,
+											cmtCount
 											);
 				list.add(notice);
 				
@@ -111,7 +113,11 @@ public class NoticeService {
 			st.setString(1, "%"+query+"%");
 			ResultSet rs = st.executeQuery(); // 쿼리 실행후 결과를 얻어서 fetch해올수 있게함
 			
-			count = rs.getInt("count");
+			if(rs.next())
+			{
+				count = rs.getInt("count");
+			}
+			
 			
 			rs.close();
 			st.close();

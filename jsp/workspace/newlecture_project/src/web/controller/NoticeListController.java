@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import web.entity.Notice;
+import web.entity.NoticeView;
 import web.service.NoticeService;
 
 @WebServlet("/notice/list")
@@ -48,9 +49,12 @@ public class NoticeListController extends HttpServlet{
 		}
 		
 		NoticeService service = new NoticeService();
-		List<Notice> list = service.getNoticeList(field, query, page);
-
+		List<NoticeView> list = service.getNoticeList(field, query, page);
+		int count = service.getNoticeCount(field, query);
+		
 		request.setAttribute("list", list);
+		request.setAttribute("count", count);
+		
 		// Servlet에서 다른 Servelt으로 이동하는 2가지 방법
 		// 1. redirect => request,response 유지하지 않고 그냥 Servelt을 이동시킴
 		// 2. forward => request,response를 다른 Servelt으로 유지하면서 이동시킴
