@@ -13,52 +13,32 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
+import web.entity.Member;
+import web.service.MemberService;
 
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String email = request.getParameter("email");
+		String id_ = "";
+		String id = request.getParameter("id");
 		String password = request.getParameter("password");
+		MemberService service = new MemberService();
 		
-		try {
-			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String sql = "select * from member where id=? and pwd=?";
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
-			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(1, email);
-			pst.setString(2, password);
-			ResultSet rs = pst.executeQuery();
-			
-			rs.next();
-			
-			String id = rs.getString("id");
-			String pwd = rs.getString("pwd");
-			
-			if(email.equals(id) && password.equals(pwd))
-			{
-				//로그인 성공
-				request.setAttribute("id",id);
-				request.setAttribute("password",pwd);
-			}
-
-			rs.close();
-			pst.close();
-			con.close();
-			
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			request
-			.getRequestDispatcher("login.jsp")
-			.forward(request, response);
+		if(service.Login(id, password))
+		{
+			id_ = id;
 		}
+		request.setAttribute("id", id_);
+		
 		request
 		.getRequestDispatcher("index.jsp")
 		.forward(request, response);
 		
-		
 	}
+	
 }

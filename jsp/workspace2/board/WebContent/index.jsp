@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +11,15 @@
     <link rel="stylesheet" href="/css/static.css">
 </head>
 <body>
-<!-- todo : 로그인 할시 로그인 버튼을 로그아웃 버튼으로 변경, 접속한 아이디 표시 -->
+<!-- todo : login 기능에서 request를 session으로 대체 -->
     <div class="header">
-        <a href="login.jsp" class="btn">
-            로그인
-        </a>
+    <c:if test="${empty id}">
+    	<a href="login.jsp" class="btn">로그인</a>
+    </c:if>
+    <c:if test="${not empty id}">
+    	<span>${id}</span>
+    	<a href="logout" class="btn">로그아웃</a>
+    </c:if>    
         <a href="register.jsp" class="btn">
             회원가입
         </a>
