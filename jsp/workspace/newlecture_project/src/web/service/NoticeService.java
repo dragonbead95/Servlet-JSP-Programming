@@ -16,6 +16,37 @@ import web.entity.Notice;
 import web.entity.NoticeView;
 
 public class NoticeService {
+	public int removeNoticeAll(int[] ids)
+	{
+		return 0;
+	}
+	
+	public int pubNoticeAll(int[] ids)
+	{
+		return 0;
+	}
+	
+	public int insertNotice(Notice notice)
+	{
+		return 0;
+	}
+	
+	public int deleteNotice(int id)
+	{
+		return 0;
+	}
+	
+	public int updateNotice(Notice notice)
+	{
+		return 0;
+	}
+	
+	public List<Notice> getNoticeNewestList()
+	{
+		return null;
+	}
+	
+	
 	public List<NoticeView> getNoticeList()
 	{
 		return getNoticeList("title", "", 1); // ±âº»°ª page 1
