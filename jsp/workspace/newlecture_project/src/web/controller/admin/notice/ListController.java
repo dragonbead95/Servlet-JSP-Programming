@@ -20,7 +20,7 @@ import web.entity.Notice;
 import web.entity.NoticeView;
 import web.service.NoticeService;
 
-@WebServlet("/admin/notice/list")
+@WebServlet("/admin/board/notice/list")
 public class ListController extends HttpServlet{
 	//404 url 오류
 	//405 method가 존재하지 않음
@@ -28,17 +28,31 @@ public class ListController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		
 		String[] openIds = request.getParameterValues("open-id");
 		String[] delIds = request.getParameterValues("del-id");
+		String cmd = request.getParameter("cmd");
+		if(cmd.equals("일괄공개"))
+		{
+			for(String openId : openIds)
+			{
+				System.out.println("open id : " + openId);
+			}
+		}
+		else if(cmd.equals("일괄삭제")) 
+		{
+			NoticeService service = new NoticeService();
+			int[] ids = new int[delIds.length];
+			for(int i=0;i<delIds.length;i++)
+			{
+				ids[i] = Integer.parseInt(delIds[i]);
+			}
+			int result = service.deleteNoticeAll(ids); // result : 삭제가 되었다는 판단하는 값
+		}
 		
-		for(String openId : openIds)
-		{
-			System.out.println("open id : " + openId);
-		}
-		for(String delId : delIds)
-		{
-			System.out.println("del id : " + delId);
-		}
+		response.sendRedirect("list"); // list 목록 재요청 -> doGet 수행
+		
 	}
 	
 	@Override
