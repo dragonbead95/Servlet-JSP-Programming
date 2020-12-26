@@ -30,7 +30,7 @@ public class NoticeService {
 	{
 		int result = 0;
 		
-		String sql = "insert into notice(title, content, writer_id, pub) values(?,?,?,?)";
+		String sql = "insert into notice(title, content, writer_id,regdate,hit, pub) values(?,?,?,sysdate,?,?)";
 		
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		
@@ -43,7 +43,8 @@ public class NoticeService {
 			st.setString(1, notice.getTitle());
 			st.setString(2, notice.getContent());
 			st.setString(3, notice.getWriter_id());
-			st.setBoolean(4, notice.getPub());
+			st.setInt(4, 0);
+			st.setBoolean(5, notice.getPub());
 			
 			result = st.executeUpdate();
 			
