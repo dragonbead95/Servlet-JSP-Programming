@@ -41,9 +41,23 @@ public class MemberService {
 		return answer;
 	}
 	
-	public void Logout()
+	public void Register(String id, String password)
 	{
-		
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "insert into member values(?,?)";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, id);
+			pst.setString(2, password);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
-	
 }

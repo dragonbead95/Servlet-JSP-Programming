@@ -14,16 +14,16 @@
 <!-- todo : login 기능에서 request를 session으로 대체 -->
     <div class="header">
     <c:if test="${empty id}">
-    	<a href="login.jsp" class="btn">로그인</a>
+    	<a href="/member/login" class="btn">로그인</a>
     </c:if>
     <c:if test="${not empty id}">
     	<span>${id}</span>
-    	<a href="logout" class="btn">로그아웃</a>
+    	<a href="/member/logout" class="btn">로그아웃</a>
     </c:if>    
-        <a href="register.jsp" class="btn">
+        <a href="/member/register" class="btn">
             회원가입
         </a>
-        <a href="board" class="btn">
+        <a href="/board/list" class="btn">
             게시판
         </a>
     </div>

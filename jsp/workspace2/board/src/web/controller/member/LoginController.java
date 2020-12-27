@@ -1,4 +1,4 @@
-package web.controller;
+package web.controller.member;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -19,8 +19,16 @@ import javax.websocket.Session;
 import web.entity.Member;
 import web.service.MemberService;
 
-@WebServlet("/login")
+@WebServlet("/member/login")
 public class LoginController extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request
+		.getRequestDispatcher("/WEB-INF/view/login/login.jsp")
+		.forward(request, response);
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -33,10 +41,12 @@ public class LoginController extends HttpServlet {
 		{
 			id_ = id;
 		}
-		request.setAttribute("id", id_);
+		//request.setAttribute("id", id_);
+		HttpSession session = request.getSession();
+		session.setAttribute("id", id_);
 		
 		request
-		.getRequestDispatcher("index.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index.jsp")
 		.forward(request, response);
 		
 	}

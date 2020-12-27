@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/static.css">
 </head>
 <body>
-  <form action="register" method="POST" onsubmit="return confirm_password()">
+  <form action="/member/register" method="POST" onsubmit="return confirm_password()">
     <div class="align_container">
     <div class="container">
       <h1>회원가입</h1>
@@ -25,11 +25,11 @@
 
       <div class="register_btn_container">
         <button type="submit" class="btn">회원가입</button>
-        <a href="index.jsp" class="btn a_btn">취소</a>
+        <a href="/index" class="btn a_btn">취소</a>
       </div>
       
       <div class="signin">
-        <p>이미 회원이신가요? <a href="login.jsp">로그인</a></p>
+        <p>이미 회원이신가요? <a href="/member/login">로그인</a></p>
       </div>
       
     </div>

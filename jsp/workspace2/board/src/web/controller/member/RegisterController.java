@@ -1,4 +1,4 @@
-package web.controller;
+package web.controller.member;
 
 import java.io.IOException;
 import java.lang.ProcessBuilder.Redirect;
@@ -17,8 +17,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import web.entity.Member;
 
-@WebServlet("/register")
+@WebServlet("/member/register")
 public class RegisterController extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request
+		.getRequestDispatcher("/WEB-INF/view/register/register.jsp")
+		.forward(request, response);
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -33,38 +41,9 @@ public class RegisterController extends HttpServlet{
 			response.sendRedirect("register.jsp");
 		}
 		
-		Connection con = null;
-		PreparedStatement pst = null;
 		
-		try {
-			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String sql = "insert into member values(?,?)";
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
-			pst = con.prepareStatement(sql);
-			pst.setString(1, email);
-			pst.setString(2, password);
-			pst.executeQuery();
-			
-			pst.close();
-			con.close();
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			try {
-				pst.close();
-				con.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				System.exit(-1);
-			}
-			e.printStackTrace();
-		}finally {
-			
-		}
 		request
-		.getRequestDispatcher("index.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index.jsp")
 		.forward(request, response);
 		
 	}
