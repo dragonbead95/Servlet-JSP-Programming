@@ -173,20 +173,26 @@
 							<tbody>
 	
 								<c:forEach var="n" items="${list}">
+									
+									<c:if test="${n.pub}">
+										<c:set var="open" value="checked"/>
+									</c:if>
 								<tr>
 									<td>${n.id }</td>
 									<td class="title indent text-align-left"><a href="detail?id=${n.id }">${n.title}</a><span> [${n.cmtCount}]</span></td>
 									<td>${n.writer_id}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}"/></td>
 									<td>${n.hit}</td>
-									<td><input type="checkbox" name="open-id" value="${n.id}"></td>
+									
+									<td><input type="checkbox" name="open-id" ${open} value="${n.id}"></td>
+									
 									<td><input type="checkbox" name="del-id" value="${n.id}"></td>
 								</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 					</div>
-	
+					
 					<c:set var="page" value="${(empty param.p) ? 1 : param.p}"/> <!-- param.p가 null이면 page는 1부터 시작 -->
 					<c:set var="startNum" value="${page-(page-1)%5}"/>
 					<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}"/>
@@ -197,6 +203,11 @@
 					</div>
 	
 					<div class="text-align-right margin-top">
+						<c:set var="ids" value=""/>
+						<c:forEach var="n" items="${list}">
+							<c:set var="ids" value="${ids} ${n.id}"/>
+						</c:forEach>
+						<input type="hidden" name="ids" value="${ids}">
 						<input type="submit" class="btn-text btn-default" name="cmd" value="일괄공개">
 						<input type="submit" class="btn-text btn-default" name="cmd" value="일괄삭제">
 						<a class="btn-text btn-default" href="reg">글쓰기</a>				

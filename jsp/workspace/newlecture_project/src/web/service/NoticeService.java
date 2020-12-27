@@ -30,7 +30,7 @@ public class NoticeService {
 	{
 		int result = 0;
 		
-		String sql = "insert into notice(title, content, writer_id,regdate,hit, pub) values(?,?,?,sysdate,?,?)";
+		String sql = "insert into notice(title, content, writer_id,regdate,hit, pub, files) values(?,?,?,sysdate,?,?,?)";
 		
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		
@@ -45,6 +45,7 @@ public class NoticeService {
 			st.setString(3, notice.getWriter_id());
 			st.setInt(4, 0);
 			st.setBoolean(5, notice.getPub());
+			st.setString(6, notice.getFiles());
 			
 			result = st.executeUpdate();
 			
@@ -155,6 +156,75 @@ public class NoticeService {
 		
 		return list;
 	}
+	
+	public List<NoticeView> getNoticePubList(String field, String query, int page) {
+		// TODO Auto-generated method stub
+		List<NoticeView> list = new ArrayList<NoticeView>();
+		String sql = "select * from (" + 
+				"    select rownum num, N.* " + 
+				"    from (select * from notice_view where "+field+" like ? order by regdate desc) N " + 
+				") " + 
+				"where pub=1 and num between ? and ?";
+		
+		// 1, 11, 21, 31 -> an = 1 + (page-1)*10
+		// 10, 20, 30, 40 -> page*10
+		
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		
+		try 
+		{	
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"newlec","newlec"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement st = con.prepareStatement(sql); // 실행 도구 생성
+			st.setString(1, "%"+query+"%");
+			st.setInt(2, 1+(page-1)*10);
+			st.setInt(3, page*10);
+			ResultSet rs = st.executeQuery(); // 쿼리 실행후 결과를 얻어서 fetch해올수 있게함
+			
+			while(rs.next())
+			{
+				int id = rs.getInt("id");
+				String title = rs.getString("title");
+				String writer_id = rs.getString("writer_id");
+				Date regdate = rs.getDate("regdate");
+				String hit = rs.getString("hit");
+				String files = rs.getString("files");
+				//String content = rs.getString("content");
+				boolean pub = rs.getBoolean("pub");
+				int cmtCount = rs.getInt("cmt_count");
+				
+				NoticeView notice = new NoticeView(
+											id,
+											title,
+											writer_id,
+											regdate,
+											hit,
+											files,
+											//content,
+											pub,
+											cmtCount
+											);
+				list.add(notice);
+				
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+		}catch (ClassNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
 	public int getNoticeCount()
 	{
 		return getNoticeCount("title", "");
@@ -406,6 +476,8 @@ public class NoticeService {
 		}
 		return result;
 	}
+
+	
 
 
 }

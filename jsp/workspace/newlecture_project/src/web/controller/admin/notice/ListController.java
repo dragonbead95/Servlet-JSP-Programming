@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -33,22 +34,37 @@ public class ListController extends HttpServlet{
 		String[] openIds = request.getParameterValues("open-id");
 		String[] delIds = request.getParameterValues("del-id");
 		String cmd = request.getParameter("cmd");
+		String ids_ = request.getParameter("ids");
+		String[] ids = ids_.split(" ");
+		NoticeService service = new NoticeService();
+		
 		if(cmd.equals("일괄공개"))
 		{
-			for(String openId : openIds)
+			List<String> oids = Arrays.asList(openIds);
+			for(int i=0;i<ids.length;i++)
 			{
-				System.out.println("open id : " + openId);
+				//1. 현재 id가 open된 상태냐
+				if(oids.contains(ids[i]))
+				{
+					//pub => 1
+				}
+				else
+				{
+					//pub => 0
+				}
 			}
+			service.pubNoticeList(opnIds); // update notice set pub=1 where id in (?)
+			service.closeNoticeList(clsIds); // update notice set pub=0 where id not in (?)
+			
 		}
 		else if(cmd.equals("일괄삭제")) 
-		{
-			NoticeService service = new NoticeService();
-			int[] ids = new int[delIds.length];
+		{	
+			int[] ids1 = new int[delIds.length];
 			for(int i=0;i<delIds.length;i++)
 			{
-				ids[i] = Integer.parseInt(delIds[i]);
+				ids1[i] = Integer.parseInt(delIds[i]);
 			}
-			int result = service.deleteNoticeAll(ids); // result : 삭제가 되었다는 판단하는 값
+			int result = service.deleteNoticeAll(ids1); // result : 삭제가 되었다는 판단하는 값
 		}
 		
 		response.sendRedirect("list"); // list 목록 재요청 -> doGet 수행
