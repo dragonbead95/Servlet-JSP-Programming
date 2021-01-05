@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -21,10 +22,65 @@ public class NoticeService {
 		return 0;
 	}
 	
-	public int pubNoticeAll(int[] ids)
+	public int pubNoticeAll(int[] oids, int[] cids)
 	{
-		return 0;
+		List<String> oidsList = new ArrayList<String>();
+		for(int i=0;i<oids.length;i++)
+		{
+			oidsList.add(String.valueOf(oids[i]));
+		}
+		
+		List<String> cidsList = new ArrayList<String>();		
+		for(int i=0;i<cids.length;i++)
+		{
+			cidsList.add(String.valueOf(cids[i]));
+		}
+		
+		return pubNoticeAll(oidsList, cidsList);
 	}
+	
+	public int pubNoticeAll(List<String> oids, List<String> cids)
+	{
+		String oidsCSV = String.join(",", oids);
+		String cidsCSV = String.join(",", cids);
+		return pubNoticeAll(oidsCSV, cidsCSV);
+	}
+	
+	// "20, 30, 43,56"
+	public int pubNoticeAll(String oidsCSV, String cidsCSV)
+	{
+		String sqlOpen = String.format("update notice set pub=1 where id in (%s)", oidsCSV);
+		String sqlClose = String.format("update notice set pub=0 where id in (%s)", cidsCSV);
+		
+		int result = 0;
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		
+		try 
+		{	
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"newlec","newlec"); // 드라이버 매니저를 통해서 연결 객체 생성
+			Statement stOpen = con.createStatement(); // 실행 도구 생성
+			result += stOpen.executeUpdate(sqlOpen);
+			Statement stClose = con.createStatement(); // 실행 도구 생성
+			result += stClose.executeUpdate(sqlClose);
+			
+			
+			stOpen.close();
+			stClose.close();
+			con.close();
+		}catch (ClassNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+		
 	
 	public int insertNotice(Notice notice)
 	{

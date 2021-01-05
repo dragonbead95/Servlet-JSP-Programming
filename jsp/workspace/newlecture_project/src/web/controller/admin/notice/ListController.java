@@ -31,30 +31,28 @@ public class ListController extends HttpServlet{
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		
-		String[] openIds = request.getParameterValues("open-id");
+		String[] openIds = request.getParameterValues("open-id"); // 3 5 8
 		String[] delIds = request.getParameterValues("del-id");
 		String cmd = request.getParameter("cmd");
 		String ids_ = request.getParameter("ids");
-		String[] ids = ids_.split(" ");
+		String[] ids = ids_.trim().split(" "); // 1 2 3 4 5 6 ... 10
 		NoticeService service = new NoticeService();
 		
 		if(cmd.equals("일괄공개"))
 		{
 			List<String> oids = Arrays.asList(openIds);
-			for(int i=0;i<ids.length;i++)
-			{
-				//1. 현재 id가 open된 상태냐
-				if(oids.contains(ids[i]))
-				{
-					//pub => 1
-				}
-				else
-				{
-					//pub => 0
-				}
-			}
-			service.pubNoticeList(opnIds); // update notice set pub=1 where id in (?)
-			service.closeNoticeList(clsIds); // update notice set pub=0 where id not in (?)
+			// 1 2 3 ... 10 - // 3 5 8
+			// 1,2,4,6,7,9,10 => 공개해야할 게시물 번호
+			List<String> cids = new ArrayList<String>(Arrays.asList(ids));
+			cids.removeAll(oids);
+			
+			System.out.println(Arrays.asList(ids));
+			System.out.println(oids);
+			System.out.println(cids);
+			
+			//Transaction 처리
+			service.pubNoticeAll(oids, cids);
+			
 			
 		}
 		else if(cmd.equals("일괄삭제")) 
