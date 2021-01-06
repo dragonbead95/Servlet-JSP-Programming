@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
-    <link rel="stylesheet" href="css/board.css">
-    <link rel="stylesheet" href="css/static.css">
+    <link rel="stylesheet" href="/css/board.css">
+    <link rel="stylesheet" href="/css/static.css">
 </head>
 <body>
     <div class="align_container">
@@ -24,23 +24,37 @@
                     </tr>
                     
                 </thead>
-                <tbody>
-                	<tr>
-                		<td>1</td>
-                		<td>제목1</td>
-                		<td>user1</td>
-                		<td>2020-12-27</td>
-                		<td>0</td>
-                	</tr>
+                <tbody class="board_content">
+                	<c:forEach var="n" items="${list}">
+	                	<tr>
+	                		<td>${n.id}</td>
+	                		<td>${n.title}</td>
+	                		<td>${n.writer_id}</td>
+	                		<td>${n.regdate }</td>
+	                		<td>${n.hit}</td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
 
-            
+            <div class="board_page_status">
+                <span>1 / 5 pages</span>
+            </div>
+
+            <div class="board_page">
+                <a href="#" class="btn_page btn_prev">이전</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="btn_page btn_next">다음</a>
+            </div>
         </div>
         
-        <div class="container">
+        <div class="board_btn">
             <a href="#" class="btn">작성</a>
-            <a href="/index" class="btn">취소</a>
+            <a href="/index" class="btn">돌아가기</a>
         </div>
     </div>
     
