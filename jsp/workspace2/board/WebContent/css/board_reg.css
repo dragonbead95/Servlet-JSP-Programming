@@ -46,8 +46,10 @@ input:focus {
   margin-right: 5px;
   border: none;
   cursor: pointer;
-  width: 40%;
+  width: 20%;
+  text-align:center;
   opacity: 0.9;
+  
 }
 
 .write_btn:hover {

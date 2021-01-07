@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/view/board/board.jsp=UTF-8
+encoding//WebContent/WEB-INF/view/board/board_reg.html=UTF-8
+encoding//WebContent/WEB-INF/view/board/board_reg.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/index.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/login/login.jsp=UTF-8
 encoding//WebContent/WEB-INF/view/register/register.jsp=UTF-8

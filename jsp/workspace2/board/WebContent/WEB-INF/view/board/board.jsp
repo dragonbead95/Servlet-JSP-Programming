@@ -53,7 +53,7 @@
         </div>
         
         <div class="board_btn">
-            <a href="#" class="btn">작성</a>
+            <a href="/board/reg" class="btn">작성</a>
             <a href="/index" class="btn">돌아가기</a>
         </div>
     </div>

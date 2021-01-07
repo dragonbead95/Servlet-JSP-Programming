@@ -47,8 +47,27 @@ public class PostService {
 		return list;
 	}
 	
-	public boolean insertPost()
+	public boolean insertPost(String title, String writer_id, String content, String files)
 	{
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "INSERT INTO post (title, writer_id, content, files) values(?,?,?,?)";
+					
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(0, title);
+			pst.setString(1, writer_id);
+			pst.setString(2, content);
+			pst.setString(3, files);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();	
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		return false;
 	}
 	
