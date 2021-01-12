@@ -18,15 +18,24 @@ public class NoticeService {
 	private String pwd = "newlec";
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	
-	public List<Notice> getList()
+	public List<Notice> getList(int page)
 	{
+		int start = 1 + (page-1)*10; // 1 11 21 31...
+		int end = page*10; // 10 20 30 40,
 		List<Notice> list = new ArrayList<Notice>();
 		try {
-			String sql = "select * from notice";
+			String sql = "select * from (" + 
+					"                select rownum num, n.* from (" + 
+					"                                                    select * from notice order by regdate desc" + 
+					"                                            ) n" + 
+					"            )" + 
+					"where num between ? and ?";
 			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url,uid,pwd); // 드라이버 매니저를 통해서 연결 객체 생성
-			Statement st = con.createStatement(); // 실행 도구 생성
-			ResultSet rs = st.executeQuery(sql); // 쿼리 실행후 결과를 얻어서 fetch해올수 있게함
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, start);
+			st.setInt(2, end);
+			ResultSet rs = st.executeQuery(); // 쿼리 실행후 결과를 얻어서 fetch해올수 있게함
 		
 			
 			
