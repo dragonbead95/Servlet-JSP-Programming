@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,18 +38,21 @@
                     </c:forEach>
                 </tbody>
             </table>
-
+            <c:set var="page" value="${(empty param.p) ? 1 : param.p}"/>
+            <c:set var="startNum" value="${page-(page-1)%5}"/>
+			<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}"/>
+			
             <div class="board_page_status">
-                <span>1 / 5 pages</span>
+                <span>${page} / ${lastNum} pages</span>
             </div>
 
             <div class="board_page">
+            	
                 <a href="#" class="btn_page btn_prev">이전</a>
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
+                <!-- 데이터 레코드 수에 따른 pager 출력 -->
+                <c:forEach var="i" begin="${startNum}" end="${lastNum}">
+                	<a href="?p=${i}" style="${(page==i) ? 'color:orange;' : ''}">${i}</a>	
+                </c:forEach>
                 <a href="#" class="btn_page btn_next">다음</a>
             </div>
         </div>

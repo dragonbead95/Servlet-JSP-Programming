@@ -11,16 +11,24 @@ import java.util.List;
 import web.entity.Post;
 
 public class PostService {
-	public List<Post> getPostList()
+	public List<Post> getPostList(int page)
 	{
 		List<Post> list = new ArrayList<Post>();
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String sql = "select * from post";
+			String sql = "select *"
+						+ " from (select rownum num, p.*"
+						+ "			from (select * from post order by regdate desc) p)"
+						+ " where num between ? and ?";
+			int start = 1+(page-1)*10;
+			int end = page*10;
+			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
-			Statement pst = con.createStatement();
-			ResultSet rs = pst.executeQuery(sql);
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, start);
+			pst.setInt(2, end);
+			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next())
 			{
@@ -33,7 +41,6 @@ public class PostService {
 										rs.getInt("hit"),
 										rs.getString("files")
 									);
-				
 				list.add(post);
 			}
 			
@@ -56,10 +63,10 @@ public class PostService {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(0, title);
-			pst.setString(1, writer_id);
-			pst.setString(2, content);
-			pst.setString(3, files);
+			pst.setString(1, title);
+			pst.setString(2, writer_id);
+			pst.setString(3, content);
+			pst.setString(4, files);
 			pst.executeUpdate();
 			
 			pst.close();
@@ -79,5 +86,33 @@ public class PostService {
 	public boolean deletePost()
 	{
 		return false;
+	}
+	
+	public int getPostCount()
+	{
+		int count = 0;
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "select count(*) as count from post";
+					
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			Statement pst = con.createStatement();
+			ResultSet rs = pst.executeQuery(sql);
+			
+			
+			if(rs.next())
+			{
+				count = rs.getInt("count");
+			}
+			
+			rs.close();
+			pst.close();
+			con.close();
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return count;
 	}
 }

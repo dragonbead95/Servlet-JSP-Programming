@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import web.entity.Post;
 import web.service.PostService;
@@ -18,9 +19,18 @@ public class ListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PostService service = new PostService();
-		List<Post> list = service.getPostList();
+		
+		int page = 1;
+		if(!(request.getParameter("p")==null))
+		{
+			page = Integer.parseInt(request.getParameter("p")); 
+		}
+		int count = service.getPostCount();
+		
+		List<Post> list = service.getPostList(page);
 		
 		request.setAttribute("list", list);
+		request.setAttribute("count", count);
 		
 		request
 		.getRequestDispatcher("/WEB-INF/view/board/board.jsp")
