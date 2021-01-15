@@ -16,10 +16,9 @@ public class PostService {
 		List<Post> list = new ArrayList<Post>();
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String sql = "select *"
-						+ " from (select rownum num, p.*"
-						+ "			from (select * from post order by regdate desc) p)"
-						+ " where num between ? and ?";
+			String sql = "select * "
+						+ "from post_view "
+						+ "where num between ? and ?";
 			int start = 1+(page-1)*10;
 			int end = page*10;
 			

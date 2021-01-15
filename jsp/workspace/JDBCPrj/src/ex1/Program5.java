@@ -8,7 +8,7 @@ public class Program5 {
 
 	public static void main(String[] args) throws IOException {
 		NoticeConsole console = new NoticeConsole();
-
+		
 		EXIT:
 		while(true)
 		{
@@ -20,8 +20,10 @@ public class Program5 {
 			case 1: // 상세 조회
 				break;
 			case 2: // 이전
+				console.movePrevList();
 				break;
 			case 3: // 다음
+				console.moveNextList();
 				break;
 			case 4: // 글쓰기
 				break;

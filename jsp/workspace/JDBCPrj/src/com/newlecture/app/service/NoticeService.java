@@ -24,12 +24,7 @@ public class NoticeService {
 		int end = page*10; // 10 20 30 40,
 		List<Notice> list = new ArrayList<Notice>();
 		try {
-			String sql = "select * from (" + 
-					"                select rownum num, n.* from (" + 
-					"                                                    select * from notice order by regdate desc" + 
-					"                                            ) n" + 
-					"            )" + 
-					"where num between ? and ?";
+			String sql = "select * from notice_view where num between ? and ?";
 			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url,uid,pwd); // 드라이버 매니저를 통해서 연결 객체 생성
 			PreparedStatement st = con.prepareStatement(sql);
@@ -152,5 +147,33 @@ public class NoticeService {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	// Scalar
+	public int getCount() {
+		// TODO Auto-generated method stub
+		int count =0;
+		try {
+			String sql = "select count(ID) count from notice";
+			Class.forName(driver);
+			Connection con = DriverManager.getConnection(url,uid,pwd); // 드라이버 매니저를 통해서 연결 객체 생성
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			
+			if(rs.next())
+			{
+				count = rs.getInt("count");
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
 	}
 }

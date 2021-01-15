@@ -13,16 +13,23 @@ import com.newlecture.app.service.NoticeService;
 public class NoticeConsole {
 
 	private NoticeService service;
+	private int page;
+	private int count;
+	
 	public NoticeConsole()
 	{
 		service = new NoticeService();
+		page = 1;
+		count = 0;
 	}
 	public void printNoticeList() {
 		// TODO Auto-generated method stub
-		List<Notice> list = service.getList(1);
 		
+		List<Notice> list = service.getList(page);
+		count = service.getCount();
+				
 		System.out.println("-----------------------------------------");
-		System.out.printf("<공지사항> 총 %d 게시글\n", 12);
+		System.out.printf("<공지사항> 총 %d 게시글\n", count);
 		System.out.println("-----------------------------------------");
 		
 		for(Notice n : list)
@@ -48,6 +55,24 @@ public class NoticeConsole {
 		
 		
 		return menu;
+	}
+	public void movePrevList() {
+		// TODO Auto-generated method stub
+		if(page==1)
+		{
+			System.out.println("이전 페이지가 없습니다.");
+			return;
+		}
+		page--;
+	}
+	public void moveNextList() {
+		// TODO Auto-generated method stub
+//		if(page==?)
+//		{
+//			System.out.println("다음 페이지가 없습니다.");
+//			return;
+//		}
+		page++;
 	}
 
 }
