@@ -18,22 +18,22 @@ public class NoticeService {
 	private String pwd = "newlec";
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	
-	public List<Notice> getList(int page)
+	public List<Notice> getList(int page, String field, String query)
 	{
 		int start = 1 + (page-1)*10; // 1 11 21 31...
 		int end = page*10; // 10 20 30 40,
 		List<Notice> list = new ArrayList<Notice>();
 		try {
-			String sql = "select * from notice_view where num between ? and ?";
+			String sql = "select * from notice_view where "+field+" like ? and num between ? and ?";
 			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url,uid,pwd); // 드라이버 매니저를 통해서 연결 객체 생성
 			PreparedStatement st = con.prepareStatement(sql);
-			st.setInt(1, start);
-			st.setInt(2, end);
+			st.setString(1, "%"+query+"%");
+			st.setInt(2, start);
+			st.setInt(3, end);
 			ResultSet rs = st.executeQuery(); // 쿼리 실행후 결과를 얻어서 fetch해올수 있게함
 		
-			
-			
+
 			while(rs.next())
 			{
 				int id = rs.getInt("id");
