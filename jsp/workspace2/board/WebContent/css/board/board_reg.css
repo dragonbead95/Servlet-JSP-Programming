@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .container_align {
   display: flex;
   justify-content: center;
@@ -9,7 +5,7 @@
 
 .container {
   width: 50%;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .board_content {
@@ -18,6 +14,7 @@
 
 .title {
   display: inline-block;
+  margin-bottom: 10px;
 }
 
 input {
@@ -38,7 +35,7 @@ input:focus {
   justify-content: left;
 }
 .write_btn {
-  background-color: #4caf50;
+  background-color: #0c4b33;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -46,8 +43,9 @@ input:focus {
   border: none;
   cursor: pointer;
   width: 20%;
-  text-align: center;
+  text-align:center;
   opacity: 0.9;
+  
 }
 
 .write_btn:hover {

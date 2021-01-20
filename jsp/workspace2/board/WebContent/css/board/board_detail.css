@@ -18,7 +18,11 @@
 
 .title {
   display: inline-block;
-  margin-bottom: 10px;
+}
+
+.board_detail_value{
+	background-color: red;
+	font-size: 20px;
 }
 
 input {
@@ -47,9 +51,8 @@ input:focus {
   border: none;
   cursor: pointer;
   width: 20%;
-  text-align:center;
+  text-align: center;
   opacity: 0.9;
-  
 }
 
 .write_btn:hover {

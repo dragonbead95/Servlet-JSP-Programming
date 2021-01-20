@@ -17,13 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import web.entity.Member;
 
-@WebServlet("/member/register")
-public class RegisterController extends HttpServlet{
+@WebServlet("/member/signUp")
+public class SignUpController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request
-		.getRequestDispatcher("/WEB-INF/view/register/register.jsp")
+		.getRequestDispatcher("/WEB-INF/view/signUp/signUp.jsp")
 		.forward(request, response);
 	}
 	

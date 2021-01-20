@@ -1,0 +1,21 @@
+@import "header.css";
+@import "side.css";
+@import "main.css";
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*start content section*/
+.content {
+  display: flex;
+  height: 100%;
+
+}
+/*end content section*/

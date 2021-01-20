@@ -1,0 +1,17 @@
+/*start header section*/
+.header {
+  text-align: right;
+  background-color: #0c4b33;
+  padding: 20px 0px;
+}
+
+.header_column {
+  display: inline-block;
+  margin-right: 100px;
+}
+.header_column a,
+.header_column span {
+  color: white;
+  margin-right: 10px;
+}
+/*end header section*/

@@ -1,0 +1,15 @@
+@import "../board/board.css";
+
+
+.main {
+  width: 90%;
+  background-color: #fafafa;
+}
+.main_header {
+  padding: 10px 10px;
+  margin-left: 10px;
+}
+.main_content {
+  padding: 10px 10px;
+  margin-left: 10px;
+}

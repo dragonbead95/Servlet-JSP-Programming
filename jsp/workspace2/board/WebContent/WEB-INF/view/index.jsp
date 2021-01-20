@@ -20,7 +20,7 @@
     	<span>${id}</span>
     	<a href="/member/logout" class="btn">로그아웃</a>
     </c:if>    
-        <a href="/member/register" class="btn">
+        <a href="/member/signUp" class="btn">
             회원가입
         </a>
         <a href="/board/list" class="btn">
