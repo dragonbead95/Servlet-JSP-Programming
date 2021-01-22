@@ -15,3 +15,8 @@ function confirm_password(){
 		return false;
 	}
 }
+
+function alert_SignUp()
+{
+	alert("회원가입이 완료되었습니다.");
+}

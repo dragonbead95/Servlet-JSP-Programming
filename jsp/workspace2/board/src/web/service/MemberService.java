@@ -41,8 +41,9 @@ public class MemberService {
 		return answer;
 	}
 	
-	public void Register(String id, String password)
+	public int Register(String user_id, String password)
 	{
+		int result = 0;
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 			String sql = "insert into member values(?,?)";
@@ -50,14 +51,41 @@ public class MemberService {
 			
 			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(1, id);
+			pst.setString(1, user_id);
 			pst.setString(2, password);
-			pst.executeUpdate();
+			result = pst.executeUpdate();
 			
 			pst.close();
 			con.close();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
+		return result;
+	}
+	
+	public boolean Check_UserId(String user_id)
+	{
+		boolean result = false;
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "select * from member where id=?";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, user_id);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next())
+			{
+				System.out.println(rs.getString("id"));
+			}
+			
+			pst.close();
+			con.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

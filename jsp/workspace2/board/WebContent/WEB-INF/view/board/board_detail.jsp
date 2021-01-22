@@ -45,7 +45,7 @@
 						<br>
 						
 						<label for="content" class="title"><b>내용</b></label>
-						<span name="content" class="board_detail_value">Hello World</span>
+						<textarea name="content" class="board_detail_value" readonly>Hello World</textarea>
 						<br>
 
 						<div class="board_btn">

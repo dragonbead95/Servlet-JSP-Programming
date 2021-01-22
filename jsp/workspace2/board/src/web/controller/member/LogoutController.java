@@ -15,7 +15,7 @@ public class LogoutController extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.getSession().invalidate();
 		request
-		.getRequestDispatcher("/WEB-INF/view/index.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 		.forward(request, response);
 	}
 }

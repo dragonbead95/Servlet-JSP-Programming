@@ -6,14 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    @import "/css/index/header.css";
-    @import "/css/login/login.css";
-    @import "/css/index/static.css";
-    </style>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/static.css">
 </head>
 <body>
-	<jsp:include page="../index/header.jsp"></jsp:include>
     <form action="/member/login" method="post">
         <div class="align_container">
         <div class="container">

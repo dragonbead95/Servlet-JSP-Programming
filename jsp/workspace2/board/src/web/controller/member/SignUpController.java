@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import web.entity.Member;
+import web.service.MemberService;
 
 @WebServlet("/member/signUp")
 public class SignUpController extends HttpServlet{
@@ -30,20 +31,28 @@ public class SignUpController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		String email = request.getParameter("email");
+		MemberService service = new MemberService();
+		
+		String user_id= request.getParameter("user_id");
 		String password = request.getParameter("password");
 		String re_password = request.getParameter("re_password");
+				
+		int result = service.Register(user_id, re_password);
 		
-		// 비밀번호 체크
-		if(!password.equals(re_password))
+		if(result!=0)
 		{
-			response.sendRedirect("register.jsp");
+			request.setAttribute("isSignUp", 1);
+		}
+		else
+		{
+			request.setAttribute("isSignUp", 0);
+			request
+			.getRequestDispatcher("/WEB-INF/view/signUp/signUp.jsp")
+			.forward(request, response);
 		}
 		
-		
 		request
-		.getRequestDispatcher("/WEB-INF/view/index.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 		.forward(request, response);
 		
 	}

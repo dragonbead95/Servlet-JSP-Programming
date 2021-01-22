@@ -41,12 +41,19 @@ public class LoginController extends HttpServlet {
 		{
 			id_ = id;
 		}
+		else 
+		{
+			request.setAttribute("isLogin", 0);
+			request
+			.getRequestDispatcher("/WEB-INF/view/login/login.jsp")
+			.forward(request, response);
+		}
 		//request.setAttribute("id", id_);
 		HttpSession session = request.getSession();
 		session.setAttribute("id", id_);
 		
 		request
-		.getRequestDispatcher("/WEB-INF/view/index.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 		.forward(request, response);
 		
 	}

@@ -10,8 +10,10 @@ public class Post {
 	private Date regdate;
 	private int hit;
 	private String files;
+	private boolean pub;
 	
-	public Post(int id, String title, String writer_id, String content, Date regdate, int hit, String files) {
+	public Post(int id, String title, String writer_id, String content, Date regdate, int hit, String files,
+			boolean pub) {
 		this.id = id;
 		this.title = title;
 		this.writer_id = writer_id;
@@ -19,8 +21,8 @@ public class Post {
 		this.regdate = regdate;
 		this.hit = hit;
 		this.files = files;
+		this.pub = pub;
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -63,12 +65,11 @@ public class Post {
 	public void setFiles(String files) {
 		this.files = files;
 	}
-
-	@Override
-	public String toString() {
-		return "Post [id=" + id + ", title=" + title + ", writer_id=" + writer_id + ", content=" + content
-				+ ", regdate=" + regdate + ", hit=" + hit + ", files=" + files + "]";
+	public boolean isPub() {
+		return pub;
 	}
-
+	public void setPub(boolean pub) {
+		this.pub = pub;
+	}
 	
 }
