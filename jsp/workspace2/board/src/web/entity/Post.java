@@ -71,5 +71,10 @@ public class Post {
 	public void setPub(boolean pub) {
 		this.pub = pub;
 	}
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", title=" + title + ", writer_id=" + writer_id + ", content=" + content
+				+ ", regdate=" + regdate + ", hit=" + hit + ", files=" + files + ", pub=" + pub + "]";
+	}
 	
 }

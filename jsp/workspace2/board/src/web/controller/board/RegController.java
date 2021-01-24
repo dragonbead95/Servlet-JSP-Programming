@@ -30,17 +30,21 @@ public class RegController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		String title = request.getParameter("title");
-		String writer_id = ((String) session.getAttribute("id")).split("@")[0];
+		String writer_id = request.getParameter("writer_id");
 		String content = request.getParameter("content");
-		String files = "";
+		String files = request.getParameter("files");
 		PostService service = new PostService();
 		
 		service.insertPost(title,writer_id,content,files);
+		int count = service.getPostCount();
+		
 		List<Post> list = service.getPostList(1);
 		request.setAttribute("list", list);
+		request.setAttribute("count", count);
 		
+
 		request
-		.getRequestDispatcher("/WEB-INF/view/board/board.jsp")
+		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 		.forward(request, response);	
 	}
 }

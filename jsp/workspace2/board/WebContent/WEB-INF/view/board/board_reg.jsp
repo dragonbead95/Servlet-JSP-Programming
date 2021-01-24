@@ -22,6 +22,7 @@
 				<h1>게시글 작성</h1>
 				<div class="container_align">
 					<div class="container">
+						<form action="/board/reg" method="post">
 						<label for="title" class="title"><b>제목</b></label>
 						<input type="text" placeholder="제목" name="title" id="title" required>
 						<br>
@@ -39,13 +40,14 @@
 						<br>
 
 						<label for="content" class="title"><b>내용</b></label>
-						<textarea rows="5" cols="50" class="board_content" name="content"></textarea>
+						<textarea rows="5" cols="50" class="post_content" name="content"></textarea>
 						<br>
 
 						<div class="write_container">
 							<button type="submit" class="write_btn">작성</button>
-							<button type="submit" class="write_btn">취소</button>
+							<a href="/index" class="write_btn">취소</a>
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>

@@ -44,7 +44,6 @@
 }
 .btn_page {
   width: 15px;
-  display: inline-block;
   text-align: left;
   vertical-align: middle;
   text-indent: -999px;
@@ -52,12 +51,7 @@
   cursor: pointer;
   border: 0px;
 }
-.btn_prev {
-  background: url(../images/btnPrev.png);
-}
-.btn_next {
-  background: url(../images/btnNext.png);
-}
+
 /* end board_page section */
 
 /* start board_btn section */

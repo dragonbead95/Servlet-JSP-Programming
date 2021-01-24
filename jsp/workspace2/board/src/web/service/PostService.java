@@ -38,7 +38,8 @@ public class PostService {
 										rs.getString("content"),
 										rs.getDate("regdate"),
 										rs.getInt("hit"),
-										rs.getString("files")
+										rs.getString("files"),
+										rs.getBoolean("pub")
 									);
 				list.add(post);
 			}
