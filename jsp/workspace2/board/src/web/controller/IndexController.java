@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import web.controller.board.ListController;
 import web.entity.Post;
 import web.service.PostService;
 
@@ -23,17 +24,9 @@ public class IndexController extends HttpServlet {
 		response.setDateHeader("Expires", 0);
 
 		PostService service = new PostService();
-
-		int page = 1;
-		if (!(request.getParameter("p") == null)) {
-			page = Integer.parseInt(request.getParameter("p"));
-		}
-		int count = service.getPostCount();
-
-		List<Post> list = service.getPostList(page);
-
-		request.setAttribute("list", list);
-		request.setAttribute("count", count);
+		ListController lc = new ListController();
+		
+		lc.getInitalizedPostList(request, response);
 
 		request.getRequestDispatcher("/WEB-INF/view/index/index.jsp").forward(request, response);
 	}

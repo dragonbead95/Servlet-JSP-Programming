@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import web.controller.board.ListController;
 import web.entity.Member;
 import web.service.MemberService;
 
@@ -32,6 +33,7 @@ public class SignUpController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		MemberService service = new MemberService();
+		ListController lc = new ListController();
 		
 		String user_id= request.getParameter("user_id");
 		String password = request.getParameter("password");
@@ -50,6 +52,8 @@ public class SignUpController extends HttpServlet{
 			.getRequestDispatcher("/WEB-INF/view/signUp/signUp.jsp")
 			.forward(request, response);
 		}
+		
+		lc.getInitalizedPostList(request, response);
 		
 		request
 		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")

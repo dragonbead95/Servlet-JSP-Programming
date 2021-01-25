@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,8 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
+import web.controller.board.ListController;
 import web.entity.Member;
+import web.entity.Post;
 import web.service.MemberService;
+import web.service.PostService;
 
 @WebServlet("/member/login")
 public class LoginController extends HttpServlet {
@@ -36,6 +40,7 @@ public class LoginController extends HttpServlet {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		MemberService service = new MemberService();
+		ListController lc = new ListController();
 		
 		if(service.Login(id, password))
 		{
@@ -48,9 +53,11 @@ public class LoginController extends HttpServlet {
 			.getRequestDispatcher("/WEB-INF/view/login/login.jsp")
 			.forward(request, response);
 		}
-		//request.setAttribute("id", id_);
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("id", id_);
+		
+		lc.getInitalizedPostList(request, response);
 		
 		request
 		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")

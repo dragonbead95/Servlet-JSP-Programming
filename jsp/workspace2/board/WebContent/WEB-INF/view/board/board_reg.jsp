@@ -28,7 +28,7 @@
 						<br>
 						
 						<label for="writer_id" class="title"><b>작성자</b></label>
-						<input type="text" name="writer_id" id="writer_id" readonly value="김용환">
+						<input type="text" name="writer_id" id="writer_id" readonly value="${empty id ? 'guest' : id}">
 						<br>
 						
 						<label for="regdate" class="title"><b>작성일</b></label>

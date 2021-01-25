@@ -149,7 +149,7 @@ public class NoticeService {
 	{
 		List<NoticeView> list = new ArrayList<NoticeView>();
 		String sql = "select * from (" + 
-				"    select rownum num, N.* " + 
+				"    select rownum NUM, N.* " + 
 				"    from (select * from notice_view where "+field+" like ? order by regdate desc) N " + 
 				") " + 
 				"where num between ? and ?";
@@ -182,17 +182,7 @@ public class NoticeService {
 				boolean pub = rs.getBoolean("pub");
 				int cmtCount = rs.getInt("cmt_count");
 				
-				NoticeView notice = new NoticeView(
-											id,
-											title,
-											writer_id,
-											regdate,
-											hit,
-											files,
-											//content,
-											pub,
-											cmtCount
-											);
+				NoticeView notice = new NoticeView(id, title, writer_id, regdate, hit, files, pub,cmtCount);
 				list.add(notice);
 				
 			}
@@ -246,21 +236,11 @@ public class NoticeService {
 				Date regdate = rs.getDate("regdate");
 				String hit = rs.getString("hit");
 				String files = rs.getString("files");
-				//String content = rs.getString("content");
+				String content = rs.getString("content");
 				boolean pub = rs.getBoolean("pub");
 				int cmtCount = rs.getInt("cmt_count");
 				
-				NoticeView notice = new NoticeView(
-											id,
-											title,
-											writer_id,
-											regdate,
-											hit,
-											files,
-											//content,
-											pub,
-											cmtCount
-											);
+				NoticeView notice = new NoticeView(id, title, writer_id, regdate, hit, files, pub, cmtCount);
 				list.add(notice);
 				
 			}

@@ -21,7 +21,9 @@
 				<th>작성자</th>
 				<th>날짜</th>
 				<th>조회수</th>
+				<c:if test="${id=='admin'}">
 				<th>구분</th>
+				</c:if>
 			</tr>
 		</thead>
 		<tbody class="board_content">
@@ -32,14 +34,20 @@
 					<td>${n.writer_id}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}" /></td>
 					<td>${n.hit}</td>
+					
+					<c:if test="${id=='admin'}">
 					<td><input type="checkbox" checked="${n.pub==true ? 'checked' : ''}"/></td>
+					</c:if>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<div class="board_btn">
-		<a href="/board/reg" class="btn">글쓰기</a> <a href="#" class="btn">일괄공개</a>
-		<a href="#" class="btn">일괄삭제</a>
+		<a href="/board/reg" class="btn">글쓰기</a>
+		<c:if test="${id=='admin'}">
+			<a href="/board/pub" class="btn">일괄공개</a>
+			<a href="#" class="btn">일괄삭제</a>
+		</c:if>
 	</div>
 	
 	<c:set var="page" value="${(empty param.p) ? 1 : param.p}"/>
