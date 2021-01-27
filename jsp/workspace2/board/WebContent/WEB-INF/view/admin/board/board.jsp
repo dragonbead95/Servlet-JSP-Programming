@@ -22,6 +22,7 @@
 				<th>작성자</th>
 				<th>날짜</th>
 				<th>조회수</th>
+				<th>구분</th>
 			</tr>
 		</thead>
 		<tbody class="board_content">
@@ -32,12 +33,16 @@
 					<td>${n.writer_id}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}" /></td>
 					<td>${n.hit}</td>
+					
+					<td><input type="checkbox" ${n.pub==true ? 'checked' : ''} name="pub" value="${n.id}"/></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<div class="board_btn">
-		<a href="/board/reg" class="btn">글쓰기</a>
+		<a href="/admin/board/reg" class="btn">글쓰기</a>
+		<button type="submit" class="btn">일괄공개</button>
+		<button type="submit" class="btn">일괄삭제</button>
 	</div>
 	</form>
 	
@@ -48,20 +53,20 @@
 	<div class="board_page">
 		<!-- page 이전 버튼 -->
 		<c:if test="${startNum>1}">
-			<a href="?p=${startNum-5}" class="btn_page btn_prev">&lt;</a>
+			<a href="/admin/index?p=${startNum-5}" class="btn_page btn_prev">&lt;</a>
 		</c:if>
 
 		<!-- 데이터 레코드 수에 따른 pager 출력 -->
 		<c:forEach var="i" begin="0" end="4">
 			<c:if test="${(startNum+i)<=lastNum}">
-				<a href="/index?p=${startNum+i}"
+				<a href="/admin/index?p=${startNum+i}"
 					style="${(page==startNum+i) ? 'color:orange;' : ''}">${startNum+i}</a>
 			</c:if>
 		</c:forEach>
 
 		<!-- page 다음 버튼 -->
 		<c:if test="${startNum+4<lastNum}">
-			<a href="?p=${startNum+5}" class="btn_page">&gt;</a>
+			<a href="/admin/index?p=${startNum+5}" class="btn_page">&gt;</a>
 		</c:if>
 		<c:if test="${startNum+4>=lastNum}">
 			<a onclick="alert('다음 페이지가 없습니다.');" class="btn_page">&gt;</a>

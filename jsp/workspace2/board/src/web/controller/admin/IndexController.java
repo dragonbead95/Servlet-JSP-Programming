@@ -1,7 +1,7 @@
-package web.controller;
+package web.controller.admin;
 
 import java.io.IOException;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,10 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import web.controller.board.ListController;
-import web.entity.Post;
-import web.service.PostService;
 
-@WebServlet("/index")
+@WebServlet("/admin/index")
 public class IndexController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +24,6 @@ public class IndexController extends HttpServlet {
 		ListController lc = new ListController();
 		
 		lc.getInitalizedPostList(request, response);
-
-		request.getRequestDispatcher("/WEB-INF/view/index/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/admin/index.jsp").forward(request, response);
 	}
 }

@@ -59,9 +59,20 @@ public class LoginController extends HttpServlet {
 		
 		lc.getInitalizedPostList(request, response);
 		
-		request
-		.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
-		.forward(request, response);
+		if(id_.equals("admin"))
+		{
+			request
+			.getRequestDispatcher("/WEB-INF/view/admin/index.jsp")
+			.forward(request, response);	
+		}
+		else 
+		{
+			request
+			.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
+			.forward(request, response);	
+		}
+		
+		
 		
 	}
 	
