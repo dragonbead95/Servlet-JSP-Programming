@@ -35,7 +35,7 @@ public class RegController extends HttpServlet {
 		String files = request.getParameter("files");
 		PostService service = new PostService();
 		
-		service.insertPost(title,writer_id,content,files);
+		service.insertPost(title,writer_id,content,files,1);
 		int count = service.getPostCount();
 		
 		List<Post> list = service.getPostList(1);

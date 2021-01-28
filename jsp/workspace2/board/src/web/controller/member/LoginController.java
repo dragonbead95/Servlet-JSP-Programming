@@ -40,6 +40,7 @@ public class LoginController extends HttpServlet {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		MemberService service = new MemberService();
+		PostService post_service = new PostService();
 		ListController lc = new ListController();
 		
 		if(service.Login(id, password))
@@ -57,16 +58,27 @@ public class LoginController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("id", id_);
 		
-		lc.getInitalizedPostList(request, response);
-		
 		if(id_.equals("admin"))
 		{
+			int page = 1;
+			if(!(request.getParameter("p")==null))
+			{
+				page = Integer.parseInt(request.getParameter("p")); 
+			}
+			int count = post_service.getPostCount();
+			
+			List<Post> list = post_service.getAllPostList(page);
+			
+			request.setAttribute("list", list);
+			request.setAttribute("count", count);
+			
 			request
 			.getRequestDispatcher("/WEB-INF/view/admin/index.jsp")
 			.forward(request, response);	
 		}
 		else 
 		{
+			lc.getInitalizedPostList(request, response);
 			request
 			.getRequestDispatcher("/WEB-INF/view/index/index.jsp")
 			.forward(request, response);	

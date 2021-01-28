@@ -13,7 +13,7 @@
 			<option value="wrtier_id">작성자</option>
 		</select> <input type="text"> <a href="#" class="board_search">검색</a>
 	</div>
-	<form action="/board/pub" method="post">
+	<form action="/admin/board/pub" method="post">
 	<table class="board_table">
 		<thead class="board_title">
 			<tr>
@@ -26,7 +26,9 @@
 			</tr>
 		</thead>
 		<tbody class="board_content">
+			<c:set var="ids" value=""/>
 			<c:forEach var="n" items="${list}">
+				<c:set var="ids" value="${ids} ${n.id}"/>
 				<tr>
 					<td>${n.id}</td>
 					<td><a href="/board/detail?id=${n.id}">${n.title}</a></td>
@@ -34,15 +36,18 @@
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}" /></td>
 					<td>${n.hit}</td>
 					
-					<td><input type="checkbox" ${n.pub==true ? 'checked' : ''} name="pub" value="${n.id}"/></td>
+					<td><input type="checkbox" ${n.pub==true ? 'checked' : ''} name="open-id" value="${n.id}"/></td>
 				</tr>
+				
 			</c:forEach>
 		</tbody>
 	</table>
 	<div class="board_btn">
+		
 		<a href="/admin/board/reg" class="btn">글쓰기</a>
-		<button type="submit" class="btn">일괄공개</button>
-		<button type="submit" class="btn">일괄삭제</button>
+		<input type="hidden" name="ids" value="${ids}"> <!-- 일괄공개를 위한 임시 변수 -->
+		<button type="submit" name="cmd" class="btn" value="일괄공개">일괄공개</button>
+		<button type="submit" name="cmd" class="btn" value="일괄삭제">일괄삭제</button>
 	</div>
 	</form>
 	
