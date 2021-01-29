@@ -14,16 +14,19 @@ import web.entity.Post;
 import web.service.PostService;
 
 @WebServlet("/admin/board/detail")
-public class DetailController extends HttpServlet {
+public class AdminDetailController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		request
-//		.getRequestDispatcher("/WEB-INF/view/board/board_reg.jsp")
-//		.forward(request, response);		
-	}
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub	
+		int id = Integer.parseInt(request.getParameter("id"));
+		PostService service = new PostService();
+		
+		Post post = service.getPost(id);
+		
+		request.setAttribute("post", post);
+		
+		request
+		.getRequestDispatcher("/WEB-INF/view/admin/board/board_detail.jsp")
+		.forward(request, response);		
 	}
 }

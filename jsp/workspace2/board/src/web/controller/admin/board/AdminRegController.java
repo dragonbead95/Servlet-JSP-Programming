@@ -14,7 +14,7 @@ import web.entity.Post;
 import web.service.PostService;
 
 @WebServlet("/admin/board/reg")
-public class RegController extends HttpServlet {
+public class AdminRegController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -38,9 +38,8 @@ public class RegController extends HttpServlet {
 		service.insertPost(title,writer_id,content,files,0);
 		int count = service.getPostCount();
 		
-		List<Post> list = service.getPostList(1);
-		request.setAttribute("list", list);
-		request.setAttribute("count", count);
+		AdminListController alc = new AdminListController();
+		alc.getInitalizedPostList(request, response);
 		
 
 		request

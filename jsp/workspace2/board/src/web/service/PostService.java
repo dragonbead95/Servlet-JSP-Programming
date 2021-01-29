@@ -12,7 +12,44 @@ import java.util.List;
 import web.entity.Post;
 
 public class PostService {
-	
+	public Post getPost(int id)
+	{
+		Post post = null;
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "select * "
+						+ "from post "
+						+ "where id=?";
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next())
+			{
+				post = new Post(
+									rs.getInt("id"),
+									rs.getString("title"),
+									rs.getString("writer_id"),
+									rs.getString("content"),
+									rs.getDate("regdate"),
+									rs.getInt("hit"),
+									rs.getString("files"),
+									rs.getBoolean("pub")
+								);
+			}
+			
+			rs.close();
+			pst.close();
+			con.close();	
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return post;
+	}
 	public List<Post> getAllPostList(int page)
 	{
 		List<Post> list = new ArrayList<Post>();
@@ -128,12 +165,7 @@ public class PostService {
 	{
 		return false;
 	}
-	
-	public boolean deletePost()
-	{
-		return false;
-	}
-	
+
 	public int getPostCount()
 	{
 		int count = 0;
@@ -160,6 +192,40 @@ public class PostService {
 			e.printStackTrace();
 		}
 		return count;
+	}
+	
+	public int deleteNoticeAll(List<String> dids) {
+		// TODO Auto-generated method stub
+		String didsCSV = String.join(",", dids);
+		return deleteNoticeAll(didsCSV);
+	}
+	public int deleteNoticeAll(String didsCSV) {
+		// TODO Auto-generated method stub
+		String sqlDelete = String.format("delete from post where id in (%s)",didsCSV);
+		
+		int result = 0;
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+		
+		try 
+		{	
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			Statement stDelete = con.createStatement(); // 실행 도구 생성
+			result += stDelete.executeUpdate(sqlDelete);
+			
+			stDelete.close();
+			con.close();
+		}catch (ClassNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public int pubNoticeAll(List<String> oids, List<String> cids) {

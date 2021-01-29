@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import web.service.PostService;
 
 @WebServlet("/admin/board/pub")
-public class PubController extends HttpServlet {
+public class AdminPubController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -36,7 +36,8 @@ public class PubController extends HttpServlet {
 		}
 		else if(cmd.equals("ÀÏ°ý»èÁ¦"))
 		{
-			
+			List<String> dids = Arrays.asList(openIds);			
+			service.deleteNoticeAll(dids);
 		}
 		
 		response.sendRedirect("/admin/index");

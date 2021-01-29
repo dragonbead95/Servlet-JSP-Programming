@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import web.controller.admin.board.AdminListController;
 import web.controller.board.ListController;
 import web.entity.Post;
 import web.service.PostService;
@@ -25,17 +26,8 @@ public class AdminIndexController extends HttpServlet {
 
 		PostService service = new PostService();
 		
-		int page = 1;
-		if(!(request.getParameter("p")==null))
-		{
-			page = Integer.parseInt(request.getParameter("p")); 
-		}
-		int count = service.getPostCount();
-		
-		List<Post> list = service.getAllPostList(page);
-		
-		request.setAttribute("list", list);
-		request.setAttribute("count", count);
+		AdminListController alc = new AdminListController();
+		alc.getInitalizedPostList(request, response);
 		
 		request.getRequestDispatcher("/WEB-INF/view/admin/index.jsp").forward(request, response);
 	}
