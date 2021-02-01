@@ -1,4 +1,4 @@
-package web.controller.board;
+package web.controller.admin.board;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,10 +13,11 @@ import javax.servlet.http.HttpSession;
 import web.entity.Post;
 import web.service.PostService;
 
-@WebServlet("/board/detail")
-public class DetailController extends HttpServlet {
+@WebServlet("/admin/board/edit")
+public class AdminEditController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
 		PostService service = new PostService();
 		
@@ -25,8 +26,7 @@ public class DetailController extends HttpServlet {
 		request.setAttribute("post", post);
 		
 		request
-		.getRequestDispatcher("/WEB-INF/view/board/board_detail.jsp")
-		.forward(request, response);				
+		.getRequestDispatcher("/WEB-INF/view/admin/board/board_edit.jsp")
+		.forward(request, response);		
 	}
-
 }

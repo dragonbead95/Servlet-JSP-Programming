@@ -22,7 +22,7 @@
 				<h1>게시글 작성</h1>
 				<div class="container_align">
 					<div class="container">
-						<form action="/board/reg" method="post">
+						<form action="/board/reg" method="post" enctype="multipart/form-data">
 						<label for="title" class="title"><b>제목</b></label>
 						<input type="text" placeholder="제목" name="title" id="title" required>
 						<br>
@@ -35,8 +35,8 @@
 						<input type="text" name="regdate" id="regdate" readonly>
 						<br>
 						
-						<label for="files" class="title"><b>첨부파일</b></label>
-						<input type="file" name="files" id="files">
+						<label for="file" class="title"><b>첨부파일</b></label>
+						<input type="file" name="file" id="file">
 						<br>
 
 						<label for="content" class="title"><b>내용</b></label>

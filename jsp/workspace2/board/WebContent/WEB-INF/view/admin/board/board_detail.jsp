@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +29,10 @@
 				<h1>게시글 상세</h1>
 				<div class="container_align">
 					<div class="container">
+						<form action="/admin/board/edit" method="get" enctype="multipart/form-data">
+						
+						<input name="id" type="hidden" value="${post.id}"/>
+						
 						<label for="title" class="title"><b>제목</b></label> 
 						<span name="title" class="board_detail_value">${post.title}</span><br>
 						
@@ -37,8 +44,19 @@
 						<span name="regdate" class="board_detail_value">${post.regdate}</span>
 						<br>
 						 
-						<label for="files" class="title"><b>첨부파일</b></label>
-						<span name="files" class="board_detail_value">${post.files}</span>
+						<label for="file" class="title"><b>첨부파일</b></label>
+						<span name="file" class="board_detail_value">
+							<c:forTokens var="fileName" items="${post.files}" delims="," varStatus="st">
+								<c:set var="style" value="" />
+								<c:if test="${fn:endsWith(fileName,'.zip') }">
+									<c:set var="style" value="font-weight:bold; color:red"/>
+								</c:if>
+								<a download href="/upload/${fileName}" style="${style}">${fn:toUpperCase(fileName)}</a>
+								<c:if test="${not st.last }">
+									/
+								</c:if>
+							</c:forTokens>
+						</span>
 						<br>
 						
 						<label for="content" class="title"><b>내용</b></label>
@@ -46,10 +64,11 @@
 						<br>
 
 						<div class="board_btn">
-							<a href="#" class="btn">수정</a>
+							<button type="submit" class="btn">수정</button>
 							<a href="#" class="btn">삭제</a>
 							<a href="/admin/index" class="btn">돌아가기</a>
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>
