@@ -15,7 +15,7 @@
 
 @import "/css/index/static.css";
 
-@import "/css/board/board_detail.css";
+@import "/css/board/board_edit.css";
 </style>
 </head>
 <body>
@@ -43,16 +43,20 @@
 						 
 						<label for="file" class="title"><b>첨부파일</b></label>
 						<span name="file" class="board_detail_value">
-							<input type="file" name="file" id="file">
+							<c:set var="id_num" value="1"/>
 							<c:forTokens var="fileName" items="${post.files}" delims="," varStatus="st">
-								<c:set var="style" value="" />
-								<c:if test="${fn:endsWith(fileName,'.zip') }">
-									<c:set var="style" value="font-weight:bold; color:red"/>
-								</c:if>
-								<a download href="/upload/${fileName}" style="${style}">${fn:toUpperCase(fileName)}</a>
+									<c:set var="style" value="" />
+									<c:if test="${fn:endsWith(fileName,'.zip') }">
+										<c:set var="style" value="font-weight:bold; color:red"/>
+									</c:if>
+									<a download id="file_${id_num}" href="/upload/${fileName}" style="${style}">${fn:toUpperCase(fileName)}</a>
+									<a id="file_${id_num}_btn" class="file_del_btn" onclick="del_file(${id_num})">X</a>
+									
 								<c:if test="${not st.last }">
-									/
+									<span id="file_${id_num}_sepa">/</span>
 								</c:if>
+								
+								<c:set var="id_num" value="${id_num+1}"/>
 							</c:forTokens>
 						</span>
 						<br>
@@ -60,7 +64,7 @@
 						<label for="content" class="title"><b>내용</b></label>
 						<textarea name="content" class="board_detail_value">${post.content}</textarea>
 						<br>
-
+						
 						<div class="board_btn">
 							<button type="submit" class="btn">수정</button>
 							<a href="#" class="btn">삭제</a>
@@ -73,6 +77,7 @@
 		</div>
 
 	</div>
+
 	<script>
 		const d = new Date();
 		const year = d.getFullYear();
@@ -80,6 +85,20 @@
 		const date = d.getDate();
 		let regdate = document.querySelector("#regdate");
 		regdate.value = year + "." + month + "." + date;
+		
+		function del_file(fileName)
+		{
+			const file = document.querySelector("#file_"+fileName);
+			const file_del_btn = document.querySelector("#file_"+fileName+"_btn");
+			const file_sepa = document.querySelector("#file_"+fileName+"_sepa");
+			file.remove();
+			file_del_btn.remove();
+			file_sepa.remove();
+		}
+		function hello()
+		{
+			console.log("hello span change");
+		}
 	</script>
 </body>
 </html>

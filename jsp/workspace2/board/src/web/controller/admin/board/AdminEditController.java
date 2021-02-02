@@ -29,4 +29,5 @@ public class AdminEditController extends HttpServlet {
 		.getRequestDispatcher("/WEB-INF/view/admin/board/board_edit.jsp")
 		.forward(request, response);		
 	}
+
 }

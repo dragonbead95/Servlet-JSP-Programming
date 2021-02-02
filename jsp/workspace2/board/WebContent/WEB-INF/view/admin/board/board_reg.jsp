@@ -36,7 +36,7 @@
 						<br>
 						
 						<label for="files" class="title"><b>첨부파일</b></label>
-						<input type="file" name="file" id="file">
+						<input type="file" name="file" id="file" multiple="multiple">
 						<br>
 
 						<label for="content" class="title"><b>내용</b></label>
