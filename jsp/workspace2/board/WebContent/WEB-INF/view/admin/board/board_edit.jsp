@@ -29,12 +29,12 @@
 				<h1>게시글 수정</h1>
 				<div class="container_align">
 					<div class="container">
-						<form action="/admin/board/edit" method="post" enctype="multipart/form-data">
+						<form action="/admin/board/edit" method="post" enctype="multipart/form-data" name="edit_form">
 						<label for="title" class="title"><b>제목</b></label> 
 						<input type="text" name="title" class="board_detail_value" value="${post.title}"/><br>
 						
 						<label for="writer_id" class="title"><b>작성자</b></label>
-						<span name="writer_id" class="board_detail_value">${post.writer_id}</span>
+						<input name="writer_id" class="board_detail_value" readonly  value="${post.writer_id}"/>
 						<br>
 						
 						<label for="regdate" class="title"><b>작성일</b></label>
@@ -44,13 +44,15 @@
 						<label for="file" class="title"><b>첨부파일</b></label>
 						<span name="file" class="board_detail_value">
 							<c:set var="id_num" value="1"/>
+							<input  type="hidden" name="form_fileName" value="">
+							<input type="file" name="file" id="file" multiple="multiple">
 							<c:forTokens var="fileName" items="${post.files}" delims="," varStatus="st">
 									<c:set var="style" value="" />
 									<c:if test="${fn:endsWith(fileName,'.zip') }">
 										<c:set var="style" value="font-weight:bold; color:red"/>
 									</c:if>
-									<a download id="file_${id_num}" href="/upload/${fileName}" style="${style}">${fn:toUpperCase(fileName)}</a>
-									<a id="file_${id_num}_btn" class="file_del_btn" onclick="del_file(${id_num})">X</a>
+									<a class="js_file" download id="file_${id_num}" href="/upload/${fileName}" style="${style}">${fn:toUpperCase(fileName)}</a>
+									<a id="file_${id_num}_btn" class="file_del_btn" onclick="del_file(${id_num});">X</a>
 									
 								<c:if test="${not st.last }">
 									<span id="file_${id_num}_sepa">/</span>
@@ -66,7 +68,7 @@
 						<br>
 						
 						<div class="board_btn">
-							<button type="submit" class="btn">수정</button>
+							<button type="submit" class="btn" onclick="get_fileName();">수정</button>
 							<a href="#" class="btn">삭제</a>
 							<a href="/admin/index" class="btn">돌아가기</a>
 						</div>
@@ -86,6 +88,7 @@
 		let regdate = document.querySelector("#regdate");
 		regdate.value = year + "." + month + "." + date;
 		
+
 		function del_file(fileName)
 		{
 			const file = document.querySelector("#file_"+fileName);
@@ -93,11 +96,30 @@
 			const file_sepa = document.querySelector("#file_"+fileName+"_sepa");
 			file.remove();
 			file_del_btn.remove();
-			file_sepa.remove();
+			
+			if(file_sepa!=null)
+			{
+				file_sepa.remove();	
+			}
 		}
-		function hello()
+		
+		let ufile = '';
+		
+		function get_fileName()
 		{
-			console.log("hello span change");
+			const files = document.querySelectorAll(".js_file");
+			for(let i=0; i<files.length; i++)
+			{
+				if(i==files.length-1)
+				{
+					ufile += files[i].innerText;
+				}
+				else
+				{
+					ufile += (files[i].innerText + ",");	
+				}
+			}		
+			document.edit_form.form_fileName.value = ufile;
 		}
 	</script>
 </body>
