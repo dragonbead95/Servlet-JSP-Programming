@@ -56,6 +56,8 @@ public class FileProcessor {
 			fis.close();
 		}
 		
+
+		
 		if(builder.length()==0)
 		{
 			return builder;

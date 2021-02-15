@@ -64,8 +64,8 @@
 						<br>
 
 						<div class="board_btn">
-							<button type="submit" class="btn">수정</button>
-							<a href="#" class="btn">삭제</a>
+							<button type="submit" class="btn" name="cmd" value="수정">수정</button>
+							<button type="submit" class="btn" name="cmd" value="삭제">삭제</button>
 							<a href="/admin/index" class="btn">돌아가기</a>
 						</div>
 						</form>

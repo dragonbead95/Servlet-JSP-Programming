@@ -29,7 +29,7 @@
 				<h1>게시글 수정</h1>
 				<div class="container_align">
 					<div class="container">
-						<form action="/admin/board/edit" method="post" enctype="multipart/form-data" name="edit_form">
+						<form action="/board/edit" method="post" enctype="multipart/form-data" name="edit_form">
 						
 						<input type="hidden" name="id" value="${post.id}"/> <!-- 게시글 ID -->
 						
@@ -74,8 +74,9 @@
 						<br>
 						
 						<div class="board_btn">
-							<button type="submit" class="btn" onclick="get_fileName();" name="cmd" value="수정">수정</button>
-							<a href="/admin/index" class="btn">돌아가기</a>
+							<button type="submit" class="btn" onclick="get_fileName();">수정</button>
+							<a href="#" class="btn">삭제</a>
+							<a href="/index" class="btn">돌아가기</a>
 						</div>
 						</form>
 					</div>

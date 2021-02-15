@@ -1,6 +1,7 @@
 package web.service;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -158,12 +159,52 @@ public class PostService {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return false;
+		return true;
 	}
 	
-	public boolean updatePost()
+	public boolean updatePost(int id, String title, String content, String files)
 	{
-		return false;
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "UPDATE post SET title=?,regdate=sysdate, content=?, files=? WHERE id=?";
+					
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, title);
+			pst.setString(2, content);
+			pst.setString(3, files);
+			pst.setInt(4, id);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();	
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	public boolean deletePost(int id)
+	{
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			String sql = "delete from post where id=?";
+					
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();	
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return true;
 	}
 
 	public int getPostCount()
@@ -268,4 +309,5 @@ public class PostService {
 		}
 		return result;
 	}
+	
 }
