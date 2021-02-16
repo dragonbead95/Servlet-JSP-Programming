@@ -24,6 +24,8 @@ public class AdminIndexController extends HttpServlet {
 		response.setHeader("Pragma", "no-cache");
 		response.setDateHeader("Expires", 0);
 
+		
+		
 		PostService service = new PostService();
 		
 		AdminListController alc = new AdminListController();

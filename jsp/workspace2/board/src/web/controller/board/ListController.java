@@ -23,14 +23,29 @@ public class ListController extends HttpServlet {
 		
 		PostService service = new PostService();
 		
-		int page = 1;
-		if(!(request.getParameter("p")==null))
-		{
-			page = Integer.parseInt(request.getParameter("p")); 
-		}
-		int count = service.getPostCount();
+		String field_ = request.getParameter("field");
+		String query_ = request.getParameter("query");
+		String p_ = request.getParameter("p");
 		
-		List<Post> list = service.getPostList(page);
+		String field = "title"; // 검색 필드 기본값 : 제목
+		if(field_ != null && !field_.equals(""))
+		{
+			field = field_;
+		}
+		
+		String query = "";
+		if(query_ != null && !query_.equals(""))
+		{
+			query = query_;
+		}
+		
+		int page = 1;
+		if(p_ != null && !p_.equals(""))
+		{
+			page = Integer.parseInt(p_);
+		}
+		List<Post> list = service.getPostPubList(field, query, page);
+		int count = service.getPostCount();
 		
 		request.setAttribute("list", list);
 		request.setAttribute("count", count);

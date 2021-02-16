@@ -51,13 +51,26 @@ public class PostService {
 		}
 		return post;
 	}
+	
+	public List<Post> getAllPostList()
+	{
+		return getAllPostList("title", "", 1);
+	}
+	
 	public List<Post> getAllPostList(int page)
+	{
+		return getAllPostList("title", "", page);
+	}
+	
+	public List<Post> getAllPostList(String field, String query, int page)
 	{
 		List<Post> list = new ArrayList<Post>();
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String sql = "select * "
-						+ "from post_view "
+			String sql = "select * from ("
+						+ " 				select N.* "
+						+ "					from (select * from post_view where "+field+" like ? order by regdate desc) N "
+						+ ") "
 						+ "where num between ? and ?";
 			int start = 1+(page-1)*10;
 			int end = page*10;
@@ -65,8 +78,9 @@ public class PostService {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setInt(1, start);
-			pst.setInt(2, end);
+			pst.setString(1, "%"+query+"%");
+			pst.setInt(2, start);
+			pst.setInt(3, end);
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next())
@@ -94,22 +108,35 @@ public class PostService {
 		return list;
 	}
 	
-	public List<Post> getPostList(int page)
+	public List<Post> getPostPubList()
+	{
+		return getPostPubList("title", "", 1);
+	}
+	
+	public List<Post> getPostPubList(int page)
+	{
+		return getPostPubList("title", "", page);
+	}
+	
+	public List<Post> getPostPubList(String field, String query, int page)
 	{
 		List<Post> list = new ArrayList<Post>();
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String sql = "select * "
-						+ "from post_view "
-						+ "where num between ? and ? and pub=1";
+			String sql = "select * from ("
+					+ " 				select N.* "
+					+ "					from (select * from post_view where "+field+" like ? order by regdate desc) N "
+					+ ") "
+					+ "where num between ? and ? and pub=1";
 			int start = 1+(page-1)*10;
 			int end = page*10;
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url,"board_admin","board_admin"); // 드라이버 매니저를 통해서 연결 객체 생성
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setInt(1, start);
-			pst.setInt(2, end);
+			pst.setString(1, "%"+query+"%");
+			pst.setInt(2, start);
+			pst.setInt(3, end);
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next())

@@ -96,7 +96,7 @@ public class RegController extends HttpServlet {
 		service.insertPost(title,writer_id,content,builder.toString(),1);
 		int count = service.getPostCount();
 		
-		List<Post> list = service.getPostList(1);
+		List<Post> list = service.getPostPubList(1);
 		request.setAttribute("list", list);
 		request.setAttribute("count", count);
 		

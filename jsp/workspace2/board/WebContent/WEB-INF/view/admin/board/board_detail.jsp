@@ -32,7 +32,6 @@
 						<form action="/admin/board/edit" method="get" enctype="multipart/form-data">
 						
 						<input name="id" type="hidden" value="${post.id}"/>
-						
 						<label for="title" class="title"><b>제목</b></label> 
 						<span name="title" class="board_detail_value">${post.title}</span><br>
 						
@@ -64,8 +63,10 @@
 						<br>
 
 						<div class="board_btn">
-							<button type="submit" class="btn" name="cmd" value="수정">수정</button>
-							<button type="submit" class="btn" name="cmd" value="삭제">삭제</button>
+							<c:if test="${id==post.writer_id}">
+								<button type="submit" class="btn" name="cmd" value="수정">수정</button>
+								<button type="submit" class="btn" name="cmd" value="삭제">삭제</button>
+							</c:if>
 							<a href="/admin/index" class="btn">돌아가기</a>
 						</div>
 						</form>

@@ -30,6 +30,12 @@
   text-align: center;
 }
 
+/* start board_search section*/
+.board_search{
+	display:inline-block;
+}
+/* end board_search section*/
+
 /* start board_page_status section */
 .board_page_status {
   text-align: right;

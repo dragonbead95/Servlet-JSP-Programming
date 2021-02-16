@@ -8,10 +8,16 @@
 		<h2>게시판</h2>
 	</div>
 	<div class="board_search">
-		<select name="field" id="field">
-			<option value="title">제목</option>
-			<option value="wrtier_id">작성자</option>
-		</select> <input type="text"> <a href="#" class="board_search">검색</a>
+		<form action="/admin/index" method="get">
+			<fieldset>
+				<select name="field" id="field">
+					<option value="title">제목</option>
+					<option value="writer_id">작성자</option>
+				</select>
+				<input type="text" name="query" value=""/> <!-- 검색어 --> 
+				<input class="board_search" type="submit" value="검색"/>
+			</fieldset>
+		</form>
 	</div>
 	<form action="/admin/board/pub" method="post">
 	<table class="board_table">
